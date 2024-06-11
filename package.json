@@ -1,0 +1,21 @@
+{
+  "name": "decidim-b4m",
+  "private": true,
+  "dependencies": {
+    "@decidim/browserslist-config": "^0.28.1",
+    "@decidim/core": "^0.28.1",
+    "@decidim/elections": "^0.28.1",
+    "@decidim/webpacker": "^0.28.1"
+  },
+  "version": "0.1.0",
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
+  "devDependencies": {
+    "@decidim/dev": "^0.28.1",
+    "@decidim/eslint-config": "^0.28.1",
+    "@decidim/prettier-config": "^0.28.1",
+    "@decidim/stylelint-config": "^0.28.1"
+  },
+  "browserslist": [
+    "extends @decidim/browserslist-config"
+  ]
+}
