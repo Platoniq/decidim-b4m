@@ -22,6 +22,7 @@ group :development, :test do
 
   gem "brakeman", "~> 5.4"
   gem "decidim-dev", "0.28.1"
+  gem "mdl"
   gem "net-imap", "~> 0.2.3"
   gem "net-pop", "~> 0.1.1"
   gem "net-smtp", "~> 0.3.1"
