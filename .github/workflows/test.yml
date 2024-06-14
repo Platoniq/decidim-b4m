@@ -36,19 +36,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - uses: nanasess/setup-chromedriver@v2
-        with:
-          chromedriver-version: 119.0.6045.105
-      - name: List Chrome
-        shell: "bash"
-        run: apt list --installed | grep chrome
-      - name: Remove Chrome
-        shell: "bash"
-        run: sudo apt remove google-chrome-stable
-      - uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: 119.0.6045.105
-      - name: Bundle Install
-        run: bundle install
       - name: Setup & create Database
         run: bundle exec rake db:test:prepare
         env:
