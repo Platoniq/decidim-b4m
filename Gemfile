@@ -33,9 +33,19 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 4.2"
+
+  gem "capistrano", "~> 3.18"
+  gem "capistrano-bundler"
+  gem "capistrano-passenger"
+  gem "capistrano-rails", "~> 1.6"
+  gem "capistrano-rails-console"
+  gem "capistrano-rbenv"
+  gem "capistrano-sidekiq"
 end
 
 group :production do
-  gem 'aws-sdk-s3', require: false
-  gem 'sidekiq'
+  gem "aws-sdk-s3", require: false
+  gem "figaro", "~> 1.2"
+  gem "passenger", "~> 6.0"
+  gem "sidekiq"
 end
