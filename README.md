@@ -1,5 +1,8 @@
 # decidim_b4m
 
+[![[CI] Lint](https://github.com/Platoniq/decidim-b4m/actions/workflows/lint.yml/badge.svg)](https://github.com/Platoniq/decidim-b4m/actions/workflows/lint.yml)
+[![[CI] Test](https://github.com/Platoniq/decidim-b4m/actions/workflows/test.yml/badge.svg)](https://github.com/Platoniq/decidim-b4m/actions/workflows/test.yml)
+
 Free Open-Source participatory democracy, citizen participation and open government for cities and organizations
 
 This is the open-source repository for decidim_b4m, based on [Decidim](https://github.com/decidim/decidim).

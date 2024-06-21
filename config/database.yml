@@ -29,7 +29,7 @@ default: &default
 
 development:
   <<: *default
-  database: decidim_b4m_development
+  database: <%= ENV.fetch("DATABASE_NAME") { "decidim_b4m_development" } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

@@ -17,5 +17,17 @@
   },
   "browserslist": [
     "extends @decidim/browserslist-config"
-  ]
+  ],
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json --ext .js app/packs/src",
+    "lint-fix": "eslint -c .eslintrc.json --ext .js app/packs/src --fix",
+    "stylelint": "stylelint app/packs/stylesheets/**/*.scss",
+    "stylelint-fix": "stylelint app/packs/stylesheets/**/*.scss --fix"
+  },
+  "stylelint": {
+    "extends": "@decidim/stylelint-config",
+    "rules": {
+      "block-opening-brace-space-before": "always"
+    }
+  }
 }
