@@ -2,14 +2,17 @@
 
 source "https://rubygems.org"
 
+DECIDIM_VERSION = "0.28.1"
+
 ruby RUBY_VERSION
 
-gem "decidim", "0.28.1"
-# gem "decidim-conferences", "0.28.1"
-# gem "decidim-design", "0.28.1"
-# gem "decidim-elections", "0.28.1"
-# gem "decidim-initiatives", "0.28.1"
-# gem "decidim-templates", "0.28.1"
+gem "decidim", DECIDIM_VERSION
+
+gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "develop"
+gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "main"
+
+gem "faraday", "~> 2.9.0"
 
 gem "bootsnap", "~> 1.3"
 
@@ -21,7 +24,7 @@ group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
   gem "brakeman", "~> 5.4"
-  gem "decidim-dev", "0.28.1"
+  gem "decidim-dev", DECIDIM_VERSION
   gem "mdl"
   gem "net-imap", "~> 0.2.3"
   gem "net-pop", "~> 0.1.1"
