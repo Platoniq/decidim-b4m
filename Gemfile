@@ -12,6 +12,8 @@ gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-modu
 gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "main"
 
+gem "faraday", "~> 2.9.0"
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", ">= 6.3.1"
