@@ -53,6 +53,9 @@ tailwind.config.js
 # Ignore rspec failures
 .rspec-failures
 
+# Ignore public/sw.js*
+public/sw.js*
+
 # Capistrano
 Capfile
 config/deploy.rb
