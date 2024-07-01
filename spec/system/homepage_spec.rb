@@ -3,12 +3,7 @@
 require "rails_helper"
 
 describe "Visit the home page", perform_enqueued: true do
-  let(:organization) { create(:organization) }
-
-  before do
-    switch_to_host(organization.host)
-    visit decidim.root_path
-  end
+  include_context "when visiting organization homepage"
 
   it "renders the home page" do
     expect(page).to have_content("Home")

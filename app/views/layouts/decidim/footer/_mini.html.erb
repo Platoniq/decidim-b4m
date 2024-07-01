@@ -1,0 +1,32 @@
+<div class="mini-footer">
+  <div class="container flex flex-wrap items-center gap-4 text-white pb-8">
+    <%= image_pack_tag "media/images/eu-logo.png", alt: t("eu.footer.logo"), class: "max-h-16 flex-none" %>
+    <p class="text-xs max-w-md">
+      <%= t("eu.footer.text") %>
+    </p>
+  </div>
+  <div class="mini-footer__content flex-wrap gap-8">
+    <div class="flex justify-start gap-10 items-center text-white">
+      <div>
+        <a rel="decidim noopener noreferrer" href="https://journal.platoniq.net/" target="_blank" data-external-link="false">
+          <span class="text-xs"><%= t("platoniq.footer.text") %></span>
+          <%= image_pack_tag("media/images/platoniq-logo.png", alt: t("platoniq.footer.logo"), class: "max-h-8 block") %>
+        </a>
+      </div>
+      <div>
+        <a rel="decidim noopener noreferrer" href="https://decidim.org/" target="_blank" data-external-link="false">
+          <%= image_pack_tag("media/images/decidim-logo.svg", alt: t("layouts.decidim.footer.decidim_logo"), class: "max-h-8 block") %>
+        </a>
+        <div class="text-xs mt-2 [&_a]:underline">
+          <%= t("layouts.decidim.footer.made_with_open_source").html_safe %>
+        </div>
+      </div>
+    </div>
+    <a class="flex gap-1 hover:opacity-50" rel="license noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" data-external-link="false">
+      <span class="sr-only"><%= t("layouts.decidim.footer.cc_by_license") %></span>
+      <%= icon "creative-commons-line", class: "w-6 h-6 fill-current" %>
+      <%= icon "creative-commons-by-line", class: "w-6 h-6 fill-current" %>
+      <%= icon "creative-commons-sa-line", class: "w-6 h-6 fill-current" %>
+    </a>
+  </div>
+</div>
