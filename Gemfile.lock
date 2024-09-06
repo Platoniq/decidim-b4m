@@ -8,17 +8,6 @@ GIT
       decidim-core (>= 0.28.0, < 0.29)
 
 GIT
-  remote: https://github.com/decidim-ice/decidim-module-decidim_awesome
-  revision: b2800256f5e147452438686029b3990c89fb21be
-  branch: develop
-  specs:
-    decidim-decidim_awesome (0.11.0)
-      decidim-admin (>= 0.28.0, < 0.29)
-      decidim-core (>= 0.28.0, < 0.29)
-      deface (>= 1.5)
-      sassc (~> 2.3)
-
-GIT
   remote: https://github.com/mainio/decidim-module-term_customizer
   revision: 9133eea57ebfc4164b640efd1ac6b9ca1628c793
   branch: main
@@ -304,6 +293,11 @@ GEM
     decidim-debates (0.28.2)
       decidim-comments (= 0.28.2)
       decidim-core (= 0.28.2)
+    decidim-decidim_awesome (0.11.1)
+      decidim-admin (>= 0.28.0, < 0.29)
+      decidim-core (>= 0.28.0, < 0.29)
+      deface (>= 1.5)
+      sassc (~> 2.3)
     decidim-dev (0.28.2)
       bullet (~> 7.0)
       byebug (~> 11.0)
