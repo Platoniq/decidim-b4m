@@ -1,0 +1,470 @@
+---
+bs:
+  activemodel:
+    attributes:
+      assemblies_type:
+        title: Title
+      assembly:
+        announcement: Announcement
+        area_id: Area
+        assembly_type: Assembly type
+        assembly_type_other: Assembly type other
+        banner_image: Banner image
+        closing_date: Closing date
+        closing_date_reason: Closing date reason
+        composition: Composition
+        copy_categories: Copy categories
+        copy_components: Copy components
+        copy_features: Copy features
+        created_by: Created by
+        created_by_other: Created by other
+        creation_date: Date created
+        decidim_area_id: Area
+        decidim_assemblies_type_id: Assembly type
+        decidim_scope_id: Scope
+        description: Description
+        developer_group: Promoter group
+        document: Document
+        domain: Domain
+        duration: Duration
+        facebook: Facebook
+        github: GitHub
+        hashtag: Hashtag
+        hero_image: Home image
+        import_attachments: Import attachments
+        import_categories: Import categories
+        import_components: Import components
+        included_at: Included at
+        instagram: Instagram
+        internal_organisation: Internal organisation
+        is_transparent: Is transparent
+        local_area: Organization area
+        meta_scope: Scope metadata
+        parent_id: Parent assembly
+        participatory_processes_ids: Related participatory processes
+        participatory_scope: What is decided
+        participatory_structure: How is it decided
+        private_space: Private space
+        promoted: Highlighted
+        published_at: Published at
+        purpose_of_action: Purpose of action
+        scope_id: Scope
+        scopes_enabled: Scopes enabled
+        short_description: Short description
+        show_statistics: Show statistics
+        slug: URL slug
+        special_features: Special features
+        subtitle: Subtitle
+        target: Who participates
+        title: Title
+        twitter: X
+        weight: Order position
+        youtube: YouTube
+      assembly_member:
+        birthday: Birthday
+        birthplace: Birthplace
+        ceased_date: Ceased date
+        designation_date: Designation date
+        full_name: Full name
+        gender: Gender
+        non_user_avatar: Avatar
+        position: Position
+        user_id: User or group
+        weight: Order position
+      assembly_user_role:
+        email: Email
+        name: Name
+        role: Role
+    errors:
+      models:
+        assembly:
+          attributes:
+            document:
+              allowed_file_content_types: 'Invalid document type. Only files with the following extensions are allowed: %{types}.'
+  activerecord:
+    models:
+      decidim/assembly:
+        one: Assembly
+        few: Assemblies
+        other: Assemblies
+      decidim/assembly_member:
+        one: Assembly member
+        few: Assembly members
+        other: Assembly members
+      decidim/assembly_user_role:
+        one: Assembly user role
+        few: Assembly user roles
+        other: Assembly user roles
+  decidim:
+    admin:
+      actions:
+        import_assembly: Import
+        new_assembly: New assembly
+        new_assembly_member: New assembly member
+        new_assembly_type: Novi tip veća
+        new_assembly_user_role: New assembly admin
+      assemblies:
+        create:
+          error: There was a problem creating a new assembly.
+          success: Assembly created successfully.
+        edit:
+          update: Update
+        index:
+          private: Private
+          public: Public
+          published: Published
+          unpublished: Unpublished
+        new:
+          create: Create
+          title: New assembly
+        update:
+          error: There was a problem updating this assembly.
+          success: Assembly successfully updated.
+      assemblies_copies:
+        create:
+          error: There was a problem duplicating this assembly.
+          success: Assembly successfully duplicated.
+      assemblies_types:
+        create:
+          error: Nastao je problem pri stvaranju novog tipa veća.
+          success: Tip veća uspešno stvoren.
+        destroy:
+          success: Tip veća uspešno obrisan.
+        new:
+          create: Create
+          title: Novi tip veća
+        update:
+          error: Nastao je problem pri ažuriranju ovog tipa veća.
+          success: Tip veća uspešno ažuriran.
+      assembly_copies:
+        new:
+          copy: Copy
+          select: Select which data you would like to duplicate
+          title: Duplicate assembly
+      assembly_imports:
+        create:
+          error: There was a problem importing this assembly.
+          success: Assembly successfully imported.
+        new:
+          import: Import
+          select: Select which data you would like to import
+          title: Import assembly
+      assembly_members:
+        create:
+          error: There was a problem adding a member for this assembly.
+          success: Member successfully created for this assembly.
+        destroy:
+          success: Member successfully deleted for this assembly.
+        edit:
+          title: Update assembly member
+          update: Update
+        index:
+          assembly_members_title: Assembly members
+        new:
+          create: Create
+          title: New assembly member
+        update:
+          error: There was a problem updating the member for this assembly.
+          success: Member successfully updated for this assembly.
+      assembly_publications:
+        create:
+          error: There was a problem publishing this assembly.
+          success: Assembly successfully published.
+        destroy:
+          error: There was a problem unpublishing this assembly.
+          success: Assembly successfully unpublished.
+      assembly_user_roles:
+        create:
+          error: There was a problem adding an admin for this assembly.
+          success: Admin successfully added to this assembly.
+        destroy:
+          success: Admin successfully removed from this assembly.
+        edit:
+          title: Update assembly admin
+          update: Update
+        index:
+          assembly_admins_title: Assembly admins
+        new:
+          create: Create
+          title: New assembly admin
+        update:
+          error: There was a problem updating an admin for this assembly.
+          success: Admin updated successfully for this assembly.
+      filters:
+        ceased_date_not_null:
+          label: Ceased
+          values:
+            'false': Not ceased
+            'true': Ceased
+        decidim_assemblies_type_id_eq:
+          label: Assembly type
+        search_placeholder:
+          full_name_or_user_name_or_user_nickname_cont: Search by name or nickname
+      menu:
+        assemblies: Assemblies
+        assemblies_submenu:
+          assembly_admins: Assembly admins
+          assembly_members: Members
+          attachment_collections: Folders
+          attachment_files: Files
+          attachments: Attachments
+          categories: Categories
+          components: Components
+          info: About this assembly
+          landing_page: Landing page
+          moderations: Moderations
+          private_users: Private participants
+          see_assembly: See assembly
+        assemblies_types: Tipovi veća
+      models:
+        assemblies_types:
+          fields:
+            created_at: Created at
+            title: Title
+        assembly:
+          fields:
+            actions: Actions
+            created_at: Created at
+            private: Private
+            promoted: Highlighted
+            published: Published
+            title: Title
+          name: Assembly
+        assembly_member:
+          fields:
+            ceased_date: Ceased date
+            designation_date: Designation date
+            full_name: Name
+            position: Position
+          name: Member
+          positions:
+            other: Other
+            president: President
+            secretary: Secretary
+            vice_president: Vice president
+        assembly_user_role:
+          fields:
+            email: Email
+            name: Name
+            role: Role
+          name: Assembly admin
+          roles:
+            admin: Administrator
+            collaborator: Collaborator
+            moderator: Moderator
+            valuator: Procenjivač
+      titles:
+        assemblies: Assemblies
+        assemblies_types: Tipovi veća
+    admin_log:
+      assembly:
+        create: "%{user_name} created the %{resource_name} assembly"
+        duplicate: "%{user_name} duplicated the %{resource_name} assembly"
+        export: "%{user_name} exported the %{resource_name} assembly"
+        import: "%{user_name} imported the %{resource_name} assembly"
+        publish: "%{user_name} published the %{resource_name} assembly"
+        unpublish: "%{user_name} unpublished the %{resource_name} assembly"
+        update: "%{user_name} updated the %{resource_name} assembly"
+      assembly_member:
+        create: "%{user_name} created the %{resource_name} member in the %{space_name} assembly"
+        delete: "%{user_name} removed the %{resource_name} member from the %{space_name} assembly"
+        update: "%{user_name} updated the %{resource_name} member in the %{space_name} assembly"
+      assembly_setting:
+        update: "%{user_name} updated the assemblies settings"
+      assembly_type:
+        create: "%{user_name} je stvorio tip veća %{resource_name}"
+        delete: "%{user_name} removed the %{resource_name} assembly type"
+        publish: "%{user_name} je objavio tip veća %{resource_name}"
+        unpublish: "%{user_name} je odustao od objavljivanja tipa veća %{resource_name}"
+        update: "%{user_name} je ažurirao tip veća %{resource_name}"
+      assembly_user_role:
+        create: "%{user_name} invited %{resource_name} to the %{space_name} assembly"
+        delete: "%{user_name} removed the participant %{resource_name} from the %{space_name} assembly"
+        update: "%{user_name} changed the role of %{resource_name} in the %{space_name} assembly"
+    assemblies:
+      admin:
+        assemblies:
+          form:
+            announcement_help: The text you enter here will be shown to the user right below the assembly information.
+            duration: Duration
+            duration_help: If the duration of this assembly is limited, select the end date. Otherwise, it will appear as indefinite.
+            filters: Filters
+            images: Images
+            included_at_help: Select the date when this assembly was added to the platform. It does not necessarily have to be the same as the creation date.
+            metadata: Metadata
+            other: Other
+            select_a_created_by: Select a created by
+            select_an_area: Select an Area
+            select_an_assembly_type: Select an assembly type
+            select_parent_assembly: Select parent assembly
+            slug_help_html: 'URL slugs are used to generate the URLs that point to this assembly. Only accepts letters, numbers and dashes, and must start with a letter. Example: %{url}'
+            social_handlers: Social
+            title: General Information
+            visbility: Visibility
+        assemblies_types:
+          form:
+            title: Edit assembly type
+        assembly_copies:
+          form:
+            slug_help_html: 'URL slugs are used to generate the URLs that point to this assembly. Only accepts letters, numbers and dashes, and must start with a letter. Example: %{url}'
+        assembly_imports:
+          form:
+            slug_help_html: 'URL slugs are used to generate the URLs that point to this assembly. Only accepts letters, numbers and dashes, and must start with a letter. Example: %{url}'
+        assembly_members:
+          form:
+            existing_user: Existing participant
+            explanation: 'Guidance for image:'
+            image_guide: Preferrably a portrait image that does not have any text.
+            non_user: Non participant
+            non_user_avatar_help: You should get the consent of the persons before publishing them as a member.
+            select_a_position: Select a position
+            select_user: Select a participant
+            user_type: Participant type
+        content_blocks:
+          highlighted_assemblies:
+            max_results: Maximum amount of elements to show
+        new_import:
+          accepted_types:
+            json: JSON
+      assemblies:
+        description:
+          area_name: Area
+          closing_date: Closing date
+          created_by: Created by
+          creation_date: Date created
+          data: Assembly data
+          developer_group: Promoter group
+          duration: Duration
+          included_at: Included at
+          indefinite_duration: Indefinite
+          local_area: Organization Area
+          meta_scope: Scope
+          participatory_scope: What is decided
+          participatory_structure: How is it decided
+          target: Who participates
+          title: About this assembly
+        filters:
+          names:
+            all: All
+          type: Type
+        show:
+          title: About this assembly
+      assembly_members:
+        index:
+          members: Members
+      assembly_types:
+        commission: Comission
+        consultative_advisory: Consultative/Advisory
+        executive: Executive
+        government: Government
+        others: Others
+        participatory: Participatory
+        working_group: Working group
+      content_blocks:
+        children_assemblies:
+          name: Assemblies
+        dates_metadata:
+          name: Dates metadata
+        extra_data:
+          name: Type & duration
+        highlighted_assemblies:
+          name: Highlighted assemblies
+        related_assemblies:
+          name: Related assemblies
+      created_by:
+        city_council: City Council
+        others: Others
+        public: Public
+      filter:
+        all: All types
+        commission: Commission
+        consultative_advisory: Consultative/Advisory
+        executive: Executive
+        government: Government
+        help: 'Show:'
+        others: Others
+        participatory: Participatory
+        working_group: Working group
+      index:
+        title: Assemblies
+      last_activity:
+        new_assembly: 'New assembly:'
+      pages:
+        home:
+          highlighted_assemblies:
+            active_spaces: Active assemblies
+            see_all_spaces: See all assemblies
+        user_profile:
+          member_of:
+            member_of: Member of
+      show:
+        assembly_type: Assembly type
+        duration: Duration
+        is_transparent:
+          'false': opaque
+          'true': transparent
+        private_space: This is a private assembly
+        related_participatory_processes: Related participatory processes
+        social_networks_title: Visit assembly on
+    assembly_members:
+      assembly_member:
+        designated_on: Designated on
+      index:
+        title: Members
+    events:
+      assemblies:
+        create_assembly_member:
+          email_intro: An admin of the <a href="%{resource_url}">%{resource_name}</a> assembly has added you as one of its members.
+          email_outro: You have received this notification because you have been invited to an assembly. Check the <a href="%{resource_url}">assembly page</a> to contribute!
+          email_subject: Pozvani ste da postanete član veća %{resource_name}!
+          notification_title: You have been registered as a member of Assembly <a href="%{resource_path}">%{resource_name}</a>. Check the <a href="%{resource_path}">assembly page</a> to contribute!
+      assembly:
+        role_assigned:
+          email_intro: Imenovani ste na funkciju %{role} veća %{resource_title}.
+          email_outro: Dobili ste ovo obaveštenje zbog toga što ste %{role} veća %{resource_title}.
+          email_subject: Imenovani ste na funkciju %{role} %{resource_title}.
+          notification_title: You have been assigned as %{role} for assembly <a href="%{resource_url}">%{resource_title}</a>.
+    help:
+      participatory_spaces:
+        assemblies:
+          contextual: "<p>An <strong>assembly</strong> is a group of members of an organization who meet periodically to make decisions about a specific area or scope of the organization.</p> <p>Assemblies hold meetings, some are private and some are open. If they are open, it is possible to participate in them (for example: attending if the capacity allows it, adding points to the agenda, or commenting on the proposals and decisions taken by this organ).</p> <p>Examples: A general assembly (which meets once a year to define the organisation's main lines of action as well as its executive bodies by vote), an equality advisory council (which meets every two months to make proposals on how to improve gender relations in the organisation), an evaluation commission (which meets every month to monitor a process) or a guarantee body (which collects incidents, abuses or proposals to improve decision-making procedures) are all examples of assemblies.</p>\n"
+          page: "<p>An <strong>assembly</strong> is a group of members of an organization who meet periodically to make decisions about a specific area or scope of the organization.</p> <p>Assemblies hold meetings, some are private and some are open. If they are open, it is possible to participate in them (for example: attending if the capacity allows it, adding points to the agenda, or commenting on the proposals and decisions taken by this organ).</p> <p>Examples: A general assembly (which meets once a year to define the organisation's main lines of action as well as its executive bodies by vote), an equality advisory council (which meets every two months to make proposals on how to improve gender relations in the organisation), an evaluation commission (which meets every month to monitor a process) or a guarantee body (which collects incidents, abuses or proposals to improve decision-making procedures) are all examples of assemblies.</p>\n"
+          title: What are assemblies?
+    log:
+      value_types:
+        assembly_presenter:
+          not_found: 'The assembly was not found on the database (ID: %{id})'
+        assembly_type_presenter:
+          not_found: 'Ovaj tip veća nije pronađen u bazi podataka (ID: %{id})'
+    menu:
+      assemblies: Assemblies
+    metrics:
+      assemblies:
+        description: Number of assemblies created
+        object: assemblies
+        title: Assemblies
+    participatory_processes:
+      show:
+        related_assemblies: Related assemblies
+    statistics:
+      assemblies_count: Assemblies
+  layouts:
+    decidim:
+      assemblies:
+        assembly:
+          more_info: More info
+          take_part: Take part
+        index:
+          promoted_assemblies: Highlighted assemblies
+        metadata:
+          children_item:
+            one: "%{count} assembly"
+            few: "%{count} assemblies"
+            other: "%{count} assemblies"
+        order_by_assemblies:
+          assemblies:
+            one: "%{count} assemblies"
+            few: "%{count} assemblies"
+            other: "%{count} assemblies"
+      assembly_navigation:
+        assembly_member_menu_item: Members

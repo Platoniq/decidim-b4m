@@ -1,0 +1,668 @@
+---
+bs:
+  activemodel:
+    attributes:
+      close_meeting:
+        attendees_count: Number of attendees
+        attending_organizations: List of organizations that attended
+        audio_url: Audio URL
+        closing_report: Minutes
+        closing_visible: Is visible
+        contributions_count: Number of contributions
+        proposal_ids: Proposals created in the meeting
+        video_url: Video URL
+      meeting:
+        address: Address
+        available_slots: Available slots for this meeting
+        customize_registration_email: Customize registration email
+        decidim_category_id: Category
+        decidim_scope_id: Scope
+        decidim_user_group_id: User group
+        description: Description
+        end_time: End time
+        id: ID
+        iframe_access_level: Iframe access level
+        iframe_embed_type: Iframe embed type
+        iframe_embed_type_html: Only a few services allow the "Embed in meeting page" or "Open in live event page". Note that with the "Embed in the meeting page" option on mobiles, as the screen inherits different dimensions, it will actually work as an "Open in live event page".
+        location: Location
+        location_hints: Location hints
+        online_meeting_url: Online meeting URL
+        organizer_gid: Create as
+        organizer_id: Organizer
+        private_meeting: Private meeting
+        registration_email_custom_content: Registration email custom content
+        registration_form_enabled: Registration form enabled
+        registration_terms: Registration terms
+        registration_type: Registration type
+        registration_url: Registration URL
+        registrations_enabled: Registrations enabled
+        reserved_slots: Reserved slots for this meeting
+        start_time: Start time
+        title: Title
+        transparent: Transparent
+        type_of_meeting: Type
+      meeting_agenda:
+        title: Title
+        visible: Visible
+      meeting_agenda_items:
+        description: Description
+        duration: Duration
+        title: Title
+      meeting_registration_invite:
+        email: Email
+        name: Name
+      validate_registration_code:
+        code: Code
+    errors:
+      models:
+        meeting:
+          attributes:
+            iframe_embed_type:
+              not_embeddable: This URL cannot be embedded in meeting or live event page.
+            online_meeting_url:
+              url_format: Must be valid URL
+        meeting_agenda:
+          attributes:
+            base:
+              too_many_minutes: The duration of the items exceed the meeting duration by %{count} minutes.
+              too_many_minutes_child: The duration of the item childs exceed the agenda item "%{parent_title}" parent duration by %{count} minutes.
+        meeting_registration_invite:
+          attributes:
+            email:
+              already_invited: This email account has already been invited.
+    models:
+      decidim/meetings/close_meeting_event: Meeting closed
+      decidim/meetings/create_meeting_event: Meeting
+      decidim/meetings/meeting_registrations_enabled_event: Registrations enabled
+      decidim/meetings/meeting_registrations_over_percentage_event: Registrations over limit
+      decidim/meetings/upcoming_meeting_event: Upcoming meeting
+      decidim/meetings/update_meeting_event: Meeting updated
+  activerecord:
+    models:
+      decidim/meetings/meeting:
+        one: Meeting
+        few: Meetings
+        other: Meetings
+      decidim/meetings/minutes:
+        one: Minutes
+        few: Minutes
+        other: Minutes
+      decidim/meetings/registration:
+        one: Registration
+        few: Registrations
+        other: Registrations
+  decidim:
+    admin:
+      filters:
+        meetings:
+          category_id_eq:
+            label: Category
+          closed_at_present:
+            label: State
+            values:
+              'false': Open
+              'true': Closed
+          is_upcoming_true:
+            label: Date
+            values:
+              'false': Past
+              'true': Upcoming
+          scope_id_eq:
+            label: Scope
+          with_any_origin:
+            label: Origin
+            values:
+              official: Official
+              participants: Participant
+              user_group: User Groups
+          with_any_type:
+            label: Type of meeting
+            values:
+              hybrid: Hybrid
+              in_person: In Person
+              online: Online
+      meeting_copies:
+        create:
+          error: There was a problem duplicating this meeting.
+          success: Meeting successfully duplicated.
+        new:
+          copy: Copy
+          title: Duplicate meeting
+    components:
+      meetings:
+        actions:
+          comment: Comment
+          join: Join
+        name: Meetings
+        settings:
+          global:
+            announcement: Announcement
+            comments_enabled: Comments enabled
+            comments_max_length: Comments max length (Leave 0 for default value)
+            creation_enabled_for_participants: Participants can create meetings
+            default_registration_terms: Default registration terms
+            enable_pads_creation: Enable pads creation
+            maps_enabled: Maps enabled
+            registration_code_enabled: Registration code enabled
+            resources_permissions_enabled: Actions permissions can be set for each meeting
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+            terms_and_conditions_url_for_meeting_creators: Terms and conditions URL for meeting creators
+          step:
+            announcement: Announcement
+            comments_blocked: Comments blocked
+            creation_enabled_for_participants: Meeting creation by participants enabled
+            creation_enabled_for_user_groups: Meeting creation by user groups enabled
+    events:
+      meetings:
+        meeting_closed:
+          affected_user:
+            email_intro: 'Your meeting "%{resource_title}" was closed. You can read the conclusions from its page:'
+            email_outro: You have received this notification because you organized the "%{resource_title}" meeting.
+            email_subject: The "%{resource_title}" meeting was closed
+            notification_title: The <a href="%{resource_path}">%{resource_title}</a> meeting was closed.
+          follower:
+            email_intro: 'The "%{resource_title}" meeting was closed. You can read the conclusions from its page:'
+            email_outro: You have received this notification because you are following the "%{resource_title}" meeting. You can unfollow it from the previous link.
+            email_subject: The "%{resource_title}" meeting was closed
+            notification_title: The <a href="%{resource_path}">%{resource_title}</a> meeting was closed.
+        meeting_created:
+          button_text: Register to the meeting
+          email_intro: The meeting "%{resource_title}" has been added to "%{participatory_space_title}" that you are following.
+          email_outro: You have received this notification because you are following "%{participatory_space_title}". You can unfollow it from the previous link.
+          email_subject: New meeting added to %{participatory_space_title}
+          notification_title: The meeting <a href="%{resource_path}">%{resource_title}</a> has been added to %{participatory_space_title}
+        meeting_registration_confirmed:
+          notification_title: Your registration for the meeting <a href="%{resource_url}">%{resource_title}</a> has been confirmed. Your registration code is %{registration_code}.
+        meeting_registrations_over_percentage:
+          email_intro: The allocated slots for the "%{resource_title}" meeting are over %{percentage}%.
+          email_outro: You have received this notification because you are an admin of the meeting's participatory space.
+          email_subject: The allocated slots for the "%{resource_title}" meeting are over %{percentage}%
+          notification_title: The allocated slots for the <a href="%{resource_path}">%{resource_title}</a> meeting are over %{percentage}%.
+        meeting_updated:
+          email_intro: 'The "%{resource_title}" meeting was updated. You can read the new version from its page:'
+          email_outro: You have received this notification because you are following the "%{resource_title}" meeting. You can unfollow it from the previous link.
+          email_subject: The "%{resource_title}" meeting was updated
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> meeting was updated.
+        registration_code_validated:
+          email_intro: Your registration code "%{registration_code}" for the "%{resource_title}" meeting has been validated.
+          email_outro: You have received this notification because your registration code for the "%{resource_title}" meeting has been validated.
+          email_subject: Your registration code "%{registration_code}" for the "%{resource_title}" meeting has been validated
+          notification_title: Your registration code "%{registration_code}" for the <a href="%{resource_path}">%{resource_title}</a> meeting has been validated.
+        registrations_enabled:
+          email_intro: 'The "%{resource_title}" meeting has enabled registrations. You can register yourself on its page:'
+          email_outro: You have received this notification because you are following the "%{resource_title}" meeting. You can unfollow it from the previous link.
+          email_subject: The "%{resource_title}" meeting has enabled registrations.
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> meeting has enabled registrations.
+        upcoming_meeting:
+          email_intro: The "%{resource_title}" meeting will start in less than 48h.
+          email_outro: You have received this notification because you are following the "%{resource_title}" meeting. You can unfollow it from the previous link.
+          email_subject: The "%{resource_title}" meeting will start in less than 48h.
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> meeting will start in less than 48h.
+    forms:
+      meetings:
+        attendees_count_help_text: Do not forget to include the total number of attendees at your meeting, whether in person, online or hybrid.
+    gamification:
+      badges:
+        attended_meetings:
+          conditions:
+            - Register for the meetings you want to attend
+          description: This badge is granted when you attend several face-to-face meetings.
+          description_another: This participant has attended %{score} meetings.
+          description_own: You have attended %{score} meetings.
+          name: Attended meetings
+          next_level_in: Attend %{score} more meetings to reach the next level!
+          unearned_another: This participant has not attended any meeting yet.
+          unearned_own: You have not attended any meeting yet.
+    meetings:
+      actions:
+        agenda: Agenda
+        attachment_collections: Folders
+        attachments: Attachments
+        close: Close
+        confirm_destroy: Are you sure you want to delete this meeting?
+        destroy: Delete
+        edit: Edit
+        invalid_destroy:
+          proposals_count:
+            one: 'The meeting cannot be destroyed because it has %{count} proposal associated to it:'
+            few: 'The meeting cannot be destroyed because it has %{count} proposals associated to it:'
+            other: 'The meeting cannot be destroyed because it has %{count} proposals associated to it:'
+        manage_poll: Manage poll
+        new_meeting: New meeting
+        preview: Preview
+        registrations: Registrations
+        title: Actions
+      admin:
+        agenda:
+          agenda_item:
+            add_agenda_item_child: Add agenda sub-item
+            agenda_item: Agenda Item
+            agenda_item_children: Agenda sub-items
+            down: Down
+            remove: Remove
+            up: Up
+          agenda_item_child:
+            agenda_item_child: Agenda sub-item
+            down: Down
+            remove: Remove
+            up: Up
+          create:
+            invalid: There was a problem creating this agenda.
+            success: Agenda successfully created.
+          edit:
+            title: Edit agenda
+            update: Update
+          form:
+            add_agenda_item: Add agenda item
+            agenda_items: Agenda items
+            end_date: End date
+            start_date: Start date
+          new:
+            create: Create
+            title: New agenda
+          update:
+            invalid: There was a problem updating this agenda.
+            success: Agenda successfully updated.
+        exports:
+          answers: Answers
+          meeting_comments: Comments
+          meetings: Meetings
+          registrations: Registrations
+        invite_join_meeting_mailer:
+          invite:
+            decline: Decline invitation
+            invited_you_to_join_a_meeting: "%{invited_by} has invited you to join a meeting at %{application}. You can decline or accept it through the links below."
+            join: Join meeting '%{meeting_title}'
+        invites:
+          create:
+            error: There was a problem inviting the participant to join the meeting.
+            success: Participant successfully invited to join the meeting.
+          form:
+            attendee_type: Attendee type
+            existing_user: Existing participant
+            invite: Invite
+            invite_explanation: The participant will be invited to join the meeting and to the organization as well.
+            non_user: Non existing participant
+            select_user: Select participant
+          index:
+            filter:
+              accepted: Accepted
+              all: All
+              rejected: Rejected
+              sent: Sent
+            invite_attendee: Invite attendee
+            invites: Invites
+            registrations_disabled: You cannot invite an attendee because the registrations are disabled.
+            search: Search
+        meeting_closes:
+          edit:
+            close: Close
+            title: Close meeting
+        meetings:
+          close:
+            invalid: There was a problem closing this meeting.
+            success: Meeting successfully closed.
+          create:
+            invalid: There was a problem creating this meeting.
+            success: Meeting successfully created. Notice this is unpublished yet, you need to manually publish it.
+          destroy:
+            invalid:
+              proposals_count:
+                one: The meeting cannot be destroyed because it has %{count} proposal associated to it.
+                few: The meeting cannot be destroyed because it has %{count} proposals associated to it.
+                other: The meeting cannot be destroyed because it has %{count} proposals associated to it.
+            success: Meeting successfully deleted
+          edit:
+            title: Edit meeting
+            update: Update
+          form:
+            address_help: 'Address: used by Geocoder to find the location'
+            disclaimer: 'Disclaimer: By using an external registration system, you are aware that the organizers of %{organization} are not responsible for the data provided by the users to the external service.'
+            iframe_embed_type_html: 'Only a few services allow embedding in meeting or live event from the following domains: %{domains}'
+            location_help: 'Location: message directed to the users implying the spot to meet at'
+            location_hints_help: 'Location hints: additional info. Example: the floor of the building if it is an in-person meeting, or the meeting password if it is an online meeting with restricted access.'
+            online_meeting_url_help: 'Link: allow participants to connect directly to your meeting'
+            registration_url_help: 'Link: allow participants to go on the external service you are using for registrations'
+            select_a_meeting_type: Please select a meeting type
+            select_a_registration_type: Please select a registration type
+            select_an_iframe_access_level: Please select an iframe access level
+          index:
+            title: Meetings
+          new:
+            create: Create
+            title: Create meeting
+          publish:
+            invalid: There was a problem publishing this meeting.
+            success: Meeting successfully published.
+          service:
+            description: Description
+            down: Down
+            remove: Remove
+            service: Service
+            title: Title
+            up: Up
+          services:
+            add_service: Add service
+            services: Services
+          unpublish:
+            invalid: There was a problem unpublishing this meeting.
+            success: Meeting successfully unpublished.
+          update:
+            invalid: There was a problem updating this meeting.
+            success: Meeting successfully updated.
+        meetings_poll:
+          form:
+            title: Edit poll questionnaire for %{questionnaire_for}
+          update:
+            invalid: There was a problem updating this meeting poll.
+            success: Meeting poll successfully updated.
+        registrations:
+          edit:
+            save: Save
+            validate: Validate
+            validate_registration_code: Validate registration code
+          form:
+            available_slots_help: Leave it to 0 if you have unlimited slots available.
+            invites: Invitations
+            recommendation_message: Zbog vaše privatnosti preporučujemo da obrišete ovaj prijavni formular kada vam više ne treba, obično 3 meseca nakon što se sastanak završio.
+            registration_email_help: This text will appear in the middle of the registration confirmation email. Just after the registration code.
+            registration_form: Registration form
+            registrations_count:
+              one: There has been %{count} registration.
+              few: There has been %{count} registrations.
+              other: There has been %{count} registrations.
+            reserved_slots_help: Leave it to 0 if you do not have reserved slots.
+            reserved_slots_less_than: Must be less than or equal to %{count}
+            title: Registrations
+          update:
+            invalid: There was a problem saving the registration settings.
+            success: Meeting registrations settings successfully saved.
+          validate_registration_code:
+            invalid: This registration code is invalid.
+            success: Registration code successfully validated.
+      admin_log:
+        invite:
+          create: "%{user_name} invited %{attendee_name} to join %{resource_name} meeting on the %{space_name} space"
+          deleted: "%{user_name} uninvited %{attendee_name} from joining %{resource_name} meeting on the %{space_name} space"
+          update: "%{user_name} invited %{attendee_name} to join %{resource_name} meeting on the %{space_name} space"
+        meeting:
+          close: "%{user_name} closed the %{resource_name} meeting on the %{space_name} space"
+          create: "%{user_name} created the %{resource_name} meeting on the %{space_name} space"
+          delete: "%{user_name} deleted the %{resource_name} meeting on the %{space_name} space"
+          export_registrations: "%{user_name} exported the registrations of the %{resource_name} meeting on the %{space_name} space"
+          update: "%{user_name} updated the %{resource_name} meeting on the %{space_name} space"
+          value_types:
+            organizer_presenter:
+              not_found: 'The organizer was not found on the database (ID: %{id})'
+        questionnaire:
+          update: "%{user_name} updated the questionnaire for the %{meeting_name} meeting"
+      application_helper:
+        filter_category_values:
+          all: All
+        filter_meeting_space_values:
+          all: All
+      calendar:
+        meeting_to_event:
+          read_more: Read more about this meeting
+      calendar_modal:
+        calendar_url: Calendar URL
+        copy_calendar_url: Copy
+        copy_calendar_url_clarification: Copy calendar URL to clipboard
+        copy_calendar_url_copied: Copied!
+        copy_calendar_url_description: You can see all the published meetings in your calendar application or provider. Copy and paste this URL in your calendar using the "Add new calendar from an URL" option.
+        copy_calendar_url_explanation: Please note that you are exporting a selection of meetings, as there are active filters. If you wish to export them all, reset all filters first.
+        copy_calendar_url_message: The URL was successfully copied to clipboard.
+        export_calendar: Export calendar
+      close_meeting_reminder_mailer:
+        close_meeting_reminder:
+          body: The meeting <a href="%{meeting_path}">"%{meeting_title}"</a> is pending to be closed. Please add a report of the meeting using the "Close meeting" button.
+          greetings: Greetings,<br/>%{organization_name}<br/><a href="%{organization_url}">%{organization_url}</a>
+          hello: Hello %{username},
+          subject: You can now close your meeting with a report on the %{organization_name} platform
+      conference_venues: Conference Venues
+      content_blocks:
+        upcoming_meetings:
+          name: Upcoming meetings
+      directory:
+        meetings:
+          index:
+            meetings: Meetings
+            space_type: Participatory space
+      iframe_access_level:
+        all: All visitors
+        registered: Registered participants to this meeting
+        signed_in: Only signed-in participants
+      iframe_embed_type:
+        embed_in_meeting_page: Embed in meeting page
+        none: None
+        open_in_live_event_page: Open in live event page (with optional polls)
+        open_in_new_tab: Open URL in a new tab
+      last_activity:
+        meeting_updated: 'Meeting updated:'
+        new_meeting: 'New meeting:'
+      layouts:
+        live_event:
+          administrate: Administrate
+          close: close
+          questions: Questions
+      mailer:
+        invite_join_meeting_mailer:
+          invite:
+            subject: Invitation to join a meeting
+        registration_mailer:
+          confirmation:
+            subject: Your meeting's registration has been confirmed
+      meeting:
+        not_allowed: You are not allowed to view this meeting.
+      meeting_closes:
+        edit:
+          back: Back
+          close: Close meeting
+          title: Close meeting
+      meetings:
+        calendar_modal:
+          add_to_calendar: Add to calendar
+          apple: Add to Apple calendar
+          full_details_html: For full details go to %{link}
+          google: Add to Google calendar
+          outlook: Add to Outlook calendar
+        count:
+          meetings_count:
+            one: "%{count} meeting"
+            few: "%{count} meetings"
+            other: "%{count} meetings"
+        create:
+          invalid: There was a problem creating this meeting.
+          success: You have created the meeting successfully.
+        edit:
+          back: Back
+          title: Edit Your Meeting
+          update: Update
+        filters:
+          activity: My activity
+          all: All
+          category: Category
+          date: Date
+          date_values:
+            all: All
+            past: Past
+            upcoming: Upcoming
+          my_meetings: My meetings
+          origin: Origin
+          origin_values:
+            all: All
+            official: Official
+            participants: Participants
+            user_group: Groups
+          search: Search
+          type: Type
+          type_values:
+            all: All
+            hybrid: Hybrid
+            in_person: In-person
+            online: Online
+        form:
+          address_help: 'Address: used by Geocoder to find the location'
+          available_slots_help: Leave it to 0 if you have unlimited slots available
+          create_as: Create meeting as
+          disclaimer: 'Disclaimer: By using an external registration system, you are aware that the organizers of %{organization} are not responsible for the data provided by the users to the external service.'
+          iframe_embed_type_html: 'Only a few services allow embedding in meeting or live event from the following domains: %{domains}'
+          location_help: 'Location: message directed to the users implying the spot to meet at'
+          location_hints_help: 'Location hints: additional info. Example: the floor of the building if it is an in-person meeting, or the meeting password if it is an online meeting with restricted access.'
+          online_meeting_url_help: 'Link: allow participants to connect directly to your meeting'
+          registration_url_help: 'Link: allow participants to go on the external service you are using for registrations'
+          select_a_category: Please select a category
+          select_a_meeting_type: Please select a meeting type
+          select_a_registration_type: Please select a registration type
+          select_an_iframe_access_level: Please select an iframe access level
+        index:
+          click_here: See all meetings
+          new_meeting: New meeting
+          see_all: See all meetings
+          see_all_withdrawn: See all withdrawn meetings
+          text_banner: You are viewing the list of meetings withdrawn by their authors. %{go_back_link}.
+        meeting:
+          close_meeting: Close meeting
+          edit_close_meeting: Edit meeting report
+          edit_meeting: Edit meeting
+          join_meeting: Join meeting
+        meetings:
+          no_meetings_warning: No meetings match your search criteria or there is not any meeting scheduled.
+          upcoming_meetings_warning: Currently, there are no scheduled meetings, but here you can find all the past meetings listed.
+        new:
+          back: Back
+          create: Create
+          title: Create Your Meeting
+        registration_confirm:
+          cancel: Cancel
+          confirm: Confirm
+        show:
+          attendees: Attendees count
+          contributions: Contributions count
+          join: Register
+          leave: Cancel your registration
+          leave_confirmation: Are you sure you want to cancel your registration for this meeting?
+          link_available_soon: Link available soon
+          link_closed: The link to join the meeting will be available a few minutes before it starts
+          live_event: This meeting is happening right now
+          meeting_minutes: Meeting Minutes
+          micro_camera_permissions_warning: When you click on the button below, you will be asked for microphone and/or camera permissions, and you will join the videoconference
+          no_slots_available: No slots available
+          organizations: Attending organizations
+          registration_code_help_text: Your registration code
+          registration_state:
+            validated: VALIDATED
+            validation_pending: VALIDATION PENDING
+          remaining_slots:
+            one: "%{count} slot remaining"
+            few: "%{count} slots remaining"
+            other: "%{count} slots remaining"
+          visit_finished: View past meeting
+          withdraw_btn_hint: You can withdraw your meeting if you change your mind. The meeting is not deleted, it will appear in the list of withdrawn meetings.
+          withdraw_confirmation_html: Are you sure you want to withdraw this meeting?<br><br><strong>This action cannot be cancelled!</strong>
+          withdraw_meeting: Withdraw meeting
+        update:
+          invalid: There was a problem updating the meeting.
+          success: You have updated the meeting successfully.
+      models:
+        invite:
+          fields:
+            email: Email
+            name: Name
+            sent_at: Sent at
+            status: Status
+          status:
+            accepted: Accepted (%{at})
+            rejected: Rejected (%{at})
+            sent: Sent
+        meeting:
+          fields:
+            closed: Closed
+            end_time: End date
+            id: ID
+            map: Map
+            official_meeting: Official meeting
+            start_time: Start date
+            title: Title
+      polls:
+        questions:
+          closed_question:
+            question_results: Question results
+          index:
+            empty_questions: Throughout this meeting, some questions will be sent and you will be able to answer them. They will be displayed here.
+          index_admin:
+            admin_dashboard: Administrator dashboard
+            edit: Edit in the admin panel
+            question: Question
+            received_answer: received answer
+            received_answers: received answers
+            results: Results
+            send: Send
+            sent: Sent
+          published_question:
+            max_choices_alert: There are too many choices selected
+            question: Question
+            question_replied: Question replied
+            reply_question: Reply question
+      public_participants_list:
+        attending_organizations: Organizations
+        attending_participants: Participants
+        hidden_participants_count:
+          one: and %{count} more person
+          few: and %{count} more people
+          other: and %{count} more people
+      read_more: "(read more)"
+      registration_mailer:
+        confirmation:
+          confirmed_html: Your registration for the meeting <a href="%{url}">%{title}</a> has been confirmed.
+          details: You will find the meeting's details in the attachment.
+          registration_code: Your registration code is %{code}.
+      registration_type:
+        on_different_platform: On a different platform
+        on_this_platform: On this platform
+        registration_disabled: Registration disabled
+      registrations:
+        create:
+          invalid: There was a problem joining this meeting.
+          success: You have joined the meeting successfully. Because you have registered for this meeting, you will be notified if there are updates on it.
+        decline_invitation:
+          invalid: There was a problem declining the invitation.
+          success: You have declined the invitation successfully.
+        destroy:
+          invalid: There was a problem leaving this meeting.
+          success: You have left the meeting successfully.
+      type_of_meeting:
+        hybrid: Hybrid
+        in_person: In person
+        online: Online
+      types:
+        private_meeting: Private meeting
+        transparent: Transparent
+        withdraw: Withdrawn
+      withdraw:
+        error: An error ocurred while withdrawing the meeting.
+        success: The meeting has been withdrawn successfully.
+    metrics:
+      meetings:
+        description: Number of meetings created
+        object: meetings
+        title: Meetings
+    participatory_spaces:
+      highlighted_meetings:
+        past_meetings: Past meetings
+        see_all: See all meetings
+        upcoming_meetings: Upcoming meetings
+    resource_links:
+      meetings_through_proposals:
+        meeting_result: 'Related results:'
+        result_meeting: 'Related meetings:'
+      proposals_from_meeting:
+        meeting_proposal: 'Related proposals:'
+        proposal_meeting: 'Related meetings:'
+    statistics:
+      meetings_count: Meetings
+  devise:
+    mailer:
+      join_meeting:
+        subject: Invitation to join a meeting

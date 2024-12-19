@@ -1,0 +1,633 @@
+---
+bs:
+  activemodel:
+    attributes:
+      initiative:
+        answer: Answer
+        answer_url: Answer URL
+        area_id: Area
+        decidim_scope_id: Scope
+        decidim_user_group_id: Author
+        description: Description
+        hashtag: Hashtag
+        offline_votes: In-person signatures
+        offline_votes_for_scope: In-person signatures for %{scope_name}
+        scope_id: Scope
+        signature_end_date: End of signature collection period
+        signature_start_date: Start of signature collection period
+        signature_type: Signature collection type
+        signature_type_values:
+          any: Mixed
+          offline: In-person
+          online: Online
+        state: Status
+        title: Title
+        type_id: Type
+      initiatives_committee_member:
+        user: Committee member
+      initiatives_settings:
+        initiatives_order: Order
+      initiatives_type:
+        area_enabled: Enable authors to choose the area for their initiative
+        attachments_enabled: Enable attachments
+        banner_image: Banner image
+        child_scope_threshold_enabled: Enable child scope signatures
+        collect_user_extra_fields: Collect participant personal data on signature
+        comments_enabled: Enable comments
+        custom_signature_end_date_enabled: Enable authors to choose the end of signature collection period
+        description: Description
+        document_number_authorization_handler: Authorization to verify document number on signatures
+        extra_fields_legal_information: Legal information about the collection of personal data
+        minimum_committee_members: Minimum of committee members
+        online_signature_enabled: Online signature enabled
+        only_global_scope_enabled: Only allow global scope initiatives creation
+        promoting_committee_enabled: Enable promoting committee
+        signature_type: Signature type
+        title: Title
+        undo_online_signatures_enabled: Enable participants to undo their online signatures
+        validate_sms_code_on_votes: Add SMS code validation step to signature process
+      initiatives_type_scope:
+        decidim_scopes_id: Scopes
+        supports_required: Supports required
+      initiatives_vote:
+        date_of_birth: Date of birth
+        document_number: Document number
+        name_and_surname: Name and surname
+        postal_code: Postal code
+      organization_data:
+        address: Address
+        id_document: ID document
+        name: Complete name
+    errors:
+      models:
+        initiative:
+          attributes:
+            attachment:
+              file: File is invalid
+              needs_to_be_reattached: Needs to be reattached
+              title: Title should not be empty
+  activerecord:
+    models:
+      decidim/initiative:
+        one: Initiative
+        few: Initiatives
+        other: Initiatives
+      decidim/initiative_comittee:
+        one: Comittee
+        few: Comittees
+        other: Comittees
+      decidim/initiative_vote:
+        one: Signature
+        few: Signatures
+        other: Signatures
+  decidim:
+    admin:
+      actions:
+        new_initiative_type: New initiative type
+        new_initiative_type_scope: New initiative type scope
+      filters:
+        initiatives:
+          decidim_area_id_eq:
+            label: Area
+          state_eq:
+            label: State
+            values:
+              accepted: Enough signatures
+              created: Created
+              discarded: Discarded
+              published: Published
+              rejected: Not enough signatures
+              validating: Technical validation
+          type_id_eq:
+            label: Type
+        search_placeholder:
+          title_or_description_or_id_string_or_author_name_or_author_nickname_cont: Search %{collection} by title, description, ID or author name.
+      initiatives_settings:
+        update:
+          error: An error has occured.
+          success: The initiatives settings have been successfully updated.
+      menu:
+        attachments: Attachments
+        committee_members: Committee members
+        information: Information
+        initiative_type_scopes: Initiative type scopes
+        initiatives: Initiatives
+        initiatives_menu:
+          see_initiative: See initiative
+        initiatives_settings: Settings
+        initiatives_submenu:
+          info: About this initiative
+        initiatives_types: Initiative types
+        moderations: Moderations
+      models:
+        initiatives:
+          fields:
+            created_at: Created at
+            id: ID
+            published_at: Published at
+            state: Status
+            supports_count: Signatures
+            title: Initiatives
+        initiatives_type_scope:
+          fields:
+            scope: Scope
+            supports_required: Signatures required
+          name: Initiative type scope
+        initiatives_types:
+          fields:
+            created_at: Created at
+            title: Initiative types
+          name: Initiative type
+        initiatives_votes:
+          fields:
+            date_of_birth: Date of birth
+            document_number: Document number
+            hash: Hash
+            initiative_end_date: End date
+            initiative_id: Initiative ID
+            initiative_signatures_count: Number of signatures
+            initiative_start_date: Start date
+            initiative_title: Initiative title
+            name_and_surname: Name and surname
+            postal_code: Postal code
+            scope: Scope
+            time_and_date: Time and date
+            timestamp: Timestamp
+      titles:
+        initiatives: Initiatives
+        initiatives_types: Initiative types
+    events:
+      initiatives:
+        admin:
+          initiative_sent_to_technical_validation:
+            email_intro: The initiative "%{resource_title}" has been sent to technical validation. Check it out at <a href="%{admin_initiative_url}">the admin panel</a>
+            email_outro: You have received this notification because you are an admin of the platform.
+            email_subject: Initiative "%{resource_title}" was sent to technical validation.
+            notification_title: The initiative "%{resource_title}" has been sent to technical validation. Check it out at <a href="%{admin_initiative_path}">the admin panel</a>
+        initiative_extended:
+          email_intro: The signatures end date for the initiative %{resource_title} have been extended!
+          email_outro: You have received this notification because you are following %{resource_title}. You can stop receiving notifications following the previous link.
+          email_subject: Initiative signatures end date extended!
+          notification_title: The signatures end date for the <a href="%{resource_path}">%{resource_title}</a> initiative have been extended.
+        initiative_sent_to_technical_validation:
+          email_intro: The initiative "%{resource_title}" has been sent to technical validation. Check it out at <a href="%{admin_initiative_url}">the admin panel</a>
+          email_outro: You have received this notification because you are an admin of the platform.
+          email_subject: Initiative "%{resource_title}" was sent to technical validation.
+          notification_title: The initiative "%{resource_title}" has been sent to technical validation. Check it out at <a href="%{admin_initiative_path}">the admin panel</a>
+        milestone_completed:
+          affected_user:
+            email_intro: Your initiative %{resource_title} has achieved the %{percentage}% of signatures!
+            email_outro: You have received this notification because you are the author of the initiative %{resource_title}.
+            email_subject: New milestone completed!
+            notification_title: Your <a href="%{resource_path}">%{resource_title}</a> initiative has achieved the %{percentage}% of signatures.
+          follower:
+            email_intro: The initiative %{resource_title} has achieved the %{percentage}% of signatures!
+            email_outro: You have received this notification because you are following %{resource_title}. You can stop receiving notifications following the previous link.
+            email_subject: New milestone completed!
+            notification_title: The <a href="%{resource_path}">%{resource_title}</a> initiative has achieved the %{percentage}% of signatures.
+        support_threshold_reached:
+          email_intro: The initiative %{resource_title} has reached the signatures threshold
+          email_outro: You have received this notification because you are an admin of the platform.
+          email_subject: Signatures threshold reached
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> initiative has reached the signatures threshold
+    gamification:
+      badges:
+        initiatives:
+          conditions:
+            - Go to the participation space of Intiatives
+            - Follow the steps to create a new initiative
+          description: This badge is granted when you launch new initiatives, partnering with others to carry them out.
+          description_another: This participant has gotten %{score} initiatives published.
+          description_own: You have got %{score} initiatives published.
+          name: Published initiatives
+          next_level_in: Get %{score} more initiatives published to reach the next level!
+          unearned_another: This participant has not gotten any initiatives published yet.
+          unearned_own: You got no initiatives published yet.
+    help:
+      participatory_spaces:
+        initiatives:
+          contextual: "<p>An <strong>initiative</strong> is a proposal that can be promoted by anyone on their own initiative (independently of other channels or participation spaces) through the collection of (digital) signatures for the organization to carry out a specific action (modify a regulation, initiate a project, change the name of a department or a street, etc.).</p> <p>The promoters of an initiative can define its objectives, gather support, debate, disseminate it and define meeting points where signatures can be collected from the attendees or debates open to other participants.</p> <p>Examples: An initiative can collect signatures to convene a consultation among all the people of an organization, or to create or convene an assembly, or to initiate a process of budget increase for a territory or area of the organization. During the process of collecting signatures, more people can add to this demand and carry it forward in the organization.</p>\n"
+          page: "<p>An <strong>initiative</strong> is a proposal that can be promoted by anyone on their own initiative (independently of other channels or participation spaces) through the collection of (digital) signatures for the organization to carry out a specific action (modify a regulation, initiate a project, change the name of a department or a street, etc.).</p> <p>The promoters of an initiative can define its objectives, gather support, debate, disseminate it and define meeting points where signatures can be collected from the attendees or debates open to other participants.</p> <p>Examples: An initiative can collect signatures to convene a consultation among all the people of an organization, or to create or convene an assembly, or to initiate a process of budget increase for a territory or area of the organization. During the process of collecting signatures, more people can add to this demand and carry it forward in the organization.</p>\n"
+          title: What are initiatives?
+    initiatives:
+      actions:
+        answer: Answer
+      admin:
+        answers:
+          edit:
+            answer: Answer
+            title: Answer for %{title}
+          info_initiative:
+            created_at: Created at
+            description: Description
+            initiative_votes_count: Votes count
+            initiatives: Initiatives
+            state: State
+        committee_requests:
+          index:
+            approve: Approve
+            confirm_revoke: Are you sure?
+            invite_to_committee_help: Share this link to invite other participants to the promoter committee.
+            no_members_yet: There are no members in the promoter committee.
+            revoke: Revoke
+            title: Committee members
+        content_blocks:
+          highlighted_initiatives:
+            max_results: Maximum amount of elements to show
+            order:
+              default: Default (Least recent)
+              label: 'Order element by:'
+              most_recent: Most recent
+        exports:
+          initiatives: Initiatives
+        initiatives:
+          accept:
+            success: The initiative has been successfully accepted.
+          discard:
+            success: The initiative has been successfully discarded.
+          edit:
+            accept: Accept initiative
+            confirm: Are you sure?
+            confirm_send_to_technical_validation: Are you sure?
+            discard: Discard the initiative
+            export_pdf_signatures: Export PDF of signatures
+            export_votes: Export signatures
+            reject: Reject initiative
+            send_to_technical_validation: Send to technical validation
+            success: The initiative has been sent to technical validation.
+            update: Update
+          form:
+            settings: Settings
+            title: General information
+          index:
+            actions_title: Action
+            preview: Preview
+            print: Print
+          initiative_attachments:
+            documents: Documents
+            edit: Edit
+            new: New
+            photos: Photos
+          publish:
+            success: The initiative has been successfully published.
+          reject:
+            success: The initiative has been successfully rejected.
+          unpublish:
+            success: The initiative has been successfully unpublished.
+          update:
+            error: An error has occurred.
+            success: The initiative has been successfully updated.
+        initiatives_settings:
+          edit:
+            update: Update
+          form:
+            comments: Most commented
+            date: Most recent
+            publication_date: Most recently published
+            random: Random
+            signatures: Most signed
+            title: Settings for initiatives
+        initiatives_type_scopes:
+          create:
+            error: An error has occurred.
+            success: A new scope for the given initiative type has been created.
+          destroy:
+            success: The scope has been successfully removed.
+          edit:
+            title: Edit initiative type scope
+            update: Update
+          new:
+            create: Create
+            title: Create initiative type scope
+          update:
+            error: An error has occurred.
+            success: The scope has been successfully updated.
+        initiatives_types:
+          create:
+            error: An error has occurred.
+            success: A new initiative type has been successfully created.
+          destroy:
+            success: The initiative type has been successfully removed.
+          edit:
+            update: Update
+          form:
+            authorizations: Authorization settings
+            child_scope_threshold_enabled_help_html: 'This config flag doesn''t support offline votes. It enables sub-scopes and works with an authorization handler that associates a scope to the user. Make sure you select that authorization, below in authorization settings. For it to work, scopes need to be configured in a hierarchical way: 1 Parent - N Child. For more info on how this configuration works, see <a href="https://docs.decidim.org/en/admin/spaces/initiatives/" target="_blank">initiatives'' admin documentation page</a>.'
+            only_global_scope_enabled_help_html: Tick this flag if you enabled "Child scope signature" and configured the global scope as your parent scope. By enabling this, initiative type selection will be skipped in the initiative creation wizard. For more info on how this configuration works, see this <a href="https://docs.decidim.org/en/admin/spaces/initiatives/" target="_blank">link</a>.
+            options: Options
+          initiative_type_scopes:
+            title: Scopes for the initiative type
+          new:
+            create: Create
+            title: New initiative type
+          update:
+            error: An error has occurred.
+            success: The initiative type has been successfully updated.
+      admin_log:
+        initiative:
+          publish: "%{user_name} published the %{resource_name} initiative"
+          send_to_technical_validation: "%{user_name} sent the %{resource_name} initiative to technical validation"
+          unpublish: "%{user_name} discarded the %{resource_name} initiative"
+          update: "%{user_name} updated the %{resource_name} initiative"
+        initiatives_settings:
+          update: "%{user_name} updated the initiatives settings"
+        initiatives_type:
+          create: "%{user_name} created the %{resource_name} initiatives type"
+          delete: "%{user_name} deleted the %{resource_name} initiatives type"
+          update: "%{user_name} updated the %{resource_name} initiatives type"
+      admin_states:
+        accepted: Enough signatures
+        created: Created
+        discarded: Discarded
+        published: Published
+        rejected: Not enough signatures
+        validating: Technical validation
+      application_helper:
+        filter_state_values:
+          accepted: Enough signatures
+          all: All
+          answered: Answered
+          closed: Closed
+          open: Open
+          rejected: Not enough signatures
+        filter_type_values:
+          all: All
+      committee_requests:
+        approve:
+          success: Request has been approved.
+        new:
+          continue: Continue
+          help_text: You are about to request becoming a member of the promoter committee of this initiative.
+        revoke:
+          success: Request has been revoked.
+        spawn:
+          success: Your request has been sent to the initiative author.
+      content_blocks:
+        highlighted_initiatives:
+          name: Highlighted initiatives
+      create_initiative:
+        fill_data:
+          back: Back
+          continue: Continue
+          fill_data_help: "<ul> <li>Review the content of your initiative. Is your title easy to understand? Is the objective of your initiative clear?</li> <li>You have to choose the type of signature. In-person, online or a combination of both</li> <li>Which is the geographic scope of the initiative?</li> </ul>"
+          more_information: "(More information)"
+          select_area: Select an area
+          select_scope: Select a scope
+        finish:
+          back: Back
+          back_to_initiatives: Back to initiatives
+          callout_text: Congratulations! Your initiative has been successfully created.
+          confirm: You are going to send the initiative for an admin to review it and publish it. Once published you will not be able to edit it. Are you sure?
+          edit_my_initiative: Edit my initiative
+          go_to_my_initiatives: Go to my initiatives
+          more_information: "(More information)"
+          send_my_initiative: Send my initiative to technical validation
+        finish_help:
+          publish_helper_text: Remember that for your initiative to be published you must complete the required information and <strong>send it to technical validation</strong> for an administrator to review it.
+        previous_form:
+          back: Back
+          continue: Continue
+        promotal_committee:
+          individual_help_text: This kind of initiative requires a Promoting Commission consisting of at least %{committee_size} people (attestors). You must share the following link with the other people that are part of this initiative. When your contacts receive this link they will have to follow the indicated steps.
+          more_information: "(More information)"
+        select_initiative_type:
+          back: Back
+          choose_html: I want to create a <strong>%{title}</strong>
+          more_information: More information
+          new: Create a new initiative
+          select: I want to promote this initiative
+          select_initiative_type_help: Initiatives are a means by which the participants can intervene so that the organization can undertake actions in defence of the general interest. Which initiative do you want to launch?
+          verification_required: Verify your account to promote this initiative
+        share_committee_link:
+          invite_to_committee_help: Link to invite people that will be part of the promoter committee
+      edit:
+        accept: Accept the initiative
+        back: Back
+        confirm: Are you sure?
+        discard: Discard the initiative
+        export_pdf_signatures: Export PDF of signatures
+        export_votes: Export signatures
+        reject: Reject initiative
+        title: Edit Initiative
+        update: Update
+      events:
+        approve_membership_request:
+          email_intro: "%{author_nickname} accepted your application to be part of the promoter committee for the initiative %{resource_title}."
+          email_outro: 'You received this notification because you applied to this initiative: %{resource_title}'
+          email_subject: "%{author_nickname} accepted your application to the promoter committee"
+          notification_title: <a href="%{author_profile_url}">%{author_nickname}</a> accepted your application to be part of the promoter committee for the following initiative <a href="%{resource_url}">%{resource_title}</a>.
+        create_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, who you are following, has created a new initiative, check it out and contribute:"
+          email_outro: You have received this notification because you are following %{author_nickname}. You can stop receiving notifications following the previous link.
+          email_subject: New initiative by %{author_nickname}
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> initiative was created by <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
+        endorse_initiative_event:
+          email_intro: "%{author_name} %{author_nickname}, who you are following, has endorsed the following initiative, maybe you want to contribute to the conversation:"
+          email_outro: You have received this notification because you are following %{author_nickname}. You can stop receiving notifications following the previous link.
+          email_subject: Initiative endorsed by %{author_nickname}
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> initiative was endorsed by <a href="%{author_path}">%{author_name} %{author_nickname}</a>.
+        revoke_membership_request:
+          email_intro: "%{author_nickname} rejected your application to be part of the promoter committee for the following initiative %{resource_title}."
+          email_outro: 'You received this notification because you applied to this initiative: %{resource_title}.'
+          email_subject: "%{author_nickname} rejected your application to the promoter committee"
+          notification_title: <a href="%{author_profile_url}">%{author_nickname}</a> rejected your application to be part of the promoter committee for the following initiative <a href="%{resource_url}">%{resource_title}</a>.
+        spawn_committee_request_event:
+          email_intro: "%{applicant_nickname} applied for the promoter committee of your initiative %{resource_title}. To accept or reject the application, go to the edit form of your initiative."
+          email_outro: 'You received this notification because you are the author of this initiative: %{resource_title}'
+          email_subject: "%{applicant_nickname} wants to join your initiative"
+          notification_title: <a href="%{applicant_profile_url}">%{applicant_nickname}</a> applied for the promoter committee of your initiative <a href="%{resource_url}">%{resource_title}</a>. To accept or reject click <a href="%{resource_url}/edit">here</a>.
+      form:
+        add_documents: Add documents
+        add_image: Add image
+        attachment_legend: "(Optional) Add an attachment"
+        edit_documents: Edit documents
+        edit_image: Edit image
+        image_legend: "(Optional) Add an image"
+      index:
+        uninitialized: Initiatives are not yet configured by an administrator.
+      initiative_signatures:
+        fill_personal_data:
+          continue: Continue
+          help: Please, fill the following fields with your personal data to sign the initiative.
+        finish:
+          back_to_initiative: Back to initiative
+        sms_code:
+          continue: Check code and continue
+          help: Check the SMS received at your phone
+        sms_phone_number:
+          continue: Send me an SMS
+          help: Fill the form with your verified phone number to request your verification code.
+      initiative_votes:
+        create:
+          error: There was a problem signing the initiative.
+          invalid: The data provided to sign the initiative is not valid.
+          success_html: Congratulations! The <strong> %{title}</strong> initiative has been successfully signed.
+        personal_data:
+          invalid: Personal data is not consistent with data provided for authorization.
+        sms_code:
+          invalid: Your verification code does not match ours. Please double-check the SMS we sent you.
+        sms_phone:
+          invalid: The phone number is invalid or pending of authorization. Please, check your authorizations.
+      initiatives:
+        author_list:
+          hidden_authors_count:
+            one: and 1 more person
+            few: and %{count} more people
+            other: and %{count} more people
+        committee_members:
+          approve: Approve
+          confirm_approve: Are you sure you want to approve this member?
+          confirm_revoke: Are you sure you want to revoke this member?
+          invite_to_committee_help: Share this link to invite other participants to the promoter committee.
+          link: Link
+          no_members_yet: There are no members in the promoter committee.
+          revoke: Revoke
+          title: Committee members
+        count:
+          title:
+            one: "%{count} initiative"
+            few: "%{count} initiatives"
+            other: "%{count} initiatives"
+        filters:
+          any: Any
+          area: Area
+          author: Author
+          myself: My initiatives
+          scope: Scope
+          state: Status
+          type: Type
+        index_header:
+          new_initiative: New initiative
+        initiatives:
+          closed_initiatives_warning: Currently, there are no open initiatives, but here you can find all the closed initiatives listed.
+          no_initiatives_warning: No initiatives match your search criteria.
+        interactions:
+          comments_count:
+            count:
+              one: Comment
+              few: Comments
+              other: Comments
+        orders:
+          label: 'Sort initiatives by:'
+          most_commented: Most commented
+          most_voted: Most signed
+          random: Random
+          recent: Most recent
+          recently_published: Most recently published
+        print:
+          address: Address
+          author_title: Author of the initiative
+          city: City
+          email: Email
+          full_name: Full Name
+          general_title: Application for admission of an initiative
+          id_number: ID Number
+          initiative:
+            attachments: Attached documentation (please write the name of each document below)
+            description: 'Description:'
+            title: 'Title:'
+            type: Type of initiative
+          legal_text: The personal data collected will be incorporated and treated confidentially by the organization, according to current legislation.
+          members_header: Members of the initiative's promoter committee
+          phone_number: Phone Number
+          place_date: Place, Date
+          postal_code: Postal Code/ZIP
+          print: Print
+          province: Province/State
+          section: 'If requested by the organization, please print and fill out this form to submit where indicated:'
+          signature: Signature
+        result:
+          answer_title: This initiative has been answered.
+          initiative_rejected_reason: This initiative has been rejected due to its lack of signatures.
+        show:
+          area: Area
+          before_send_to_technical_validation_announcement: 'Before sending your initiative for technical validation, you need to add %{count} more members to the promoter committee.<br/><br/>Share this link with the people you want to be part of your committee: %{href}'
+          confirm: You are going to send the initiative for an admin to review it and publish it. Once published you will not be able to edit it. Are you sure?
+          edit: Edit
+          initiative_data: Initiative data
+          scope: Scope
+          send_to_technical_validation: Send to technical validation
+          send_to_technical_validation_announcement: If everything looks ok, click on "Send to technical validation" for an administrator to review and publish your initiative
+          signature_collection: Signature collection
+          state: State
+          type: Type
+        signatures_count:
+          one: " signature"
+          few: " signatures"
+          other: " signatures"
+        vote_cabin:
+          already_voted: Already signed
+          supports_required: "%{total_supports} signatures required"
+          verification_required: Verify your account to sign the initiative
+          vote: Sign
+          votes_blocked: Signing disabled
+        votes_count:
+          count:
+            one: Signature
+            few: Signatures
+            other: Signatures
+      initiatives_mailer:
+        creation_subject: Your initiative '%{title}' has been created
+        initiative_link:
+          check_initiative_details: You can see the initiative details
+          here: here
+        more_information: Here you have more information about the initiative creation process.
+        progress_report_body_for: The initiative %{title} has reached the %{percentage}% of required signatures.
+        progress_report_for: 'Summary about the initiative: %{title}'
+        promotal_committee_help: Remember that you must invite at least %{member_count} people to promoter committee. Forward the following link to invite people to the promoter committee
+        status_change_body_for: 'The initiative %{title} has changed its status to: %{state}'
+        status_change_for: The initiative %{title} has changed its status
+      last_activity:
+        new_initiative: 'New initiative:'
+      modal:
+        not_authorized:
+          authorizations_page: View authorizations
+          explanation: You need to be verified in order to create a new initiative.
+          title: Authorization required
+      pages:
+        home:
+          highlighted_initiatives:
+            active_spaces: Active initiatives
+            see_all_spaces: See all initiatives
+      show:
+        badge_name:
+          accepted: Enough signatures
+          created: Created
+          discarded: Discarded
+          published: Published
+          rejected: Not enough signatures
+          validating: Technical validation
+      states:
+        accepted: Accepted
+        expired: Expired
+      unavailable_scope: Unavailable scope
+      update:
+        error: An error has occurred.
+        success: The initiative has been successfully updated.
+    menu:
+      initiatives: Initiatives
+    resources:
+      initiative:
+        actions:
+          comment: Comment
+      initiatives_type:
+        actions:
+          create: Create
+          title: Actions
+          vote: Sign
+  layouts:
+    decidim:
+      initiative_creation_header:
+        fill_data: Create
+        finish: Finish
+        promotal_committee: Promoter committee
+        select_initiative_type: Choose
+      initiative_signature_creation_header:
+        fill_personal_data: Complete your data
+        finish: Finish
+        sms_code: SMS code verification
+        sms_phone_number: Mobile phone number
+        title: Sign %{initiative_title}
+      initiatives:
+        no_initiatives_yet:
+          no_initiatives_yet: No initiatives yet!
