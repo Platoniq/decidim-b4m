@@ -899,7 +899,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq
   decidim (= 0.28.2)
-  decidim-decidim_awesome
+  decidim-decidim_awesome!
   decidim-dev (= 0.28.2)
   decidim-social_crowdfunding!
   decidim-term_customizer!
