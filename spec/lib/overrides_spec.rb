@@ -15,7 +15,7 @@ checksums = [
     package: "decidim-accountability",
     files: {
       # locales
-      "/config/locales/decidim/accountability/bs.yml" => "ccead2f5f20557ea4db1501de943f82b"
+      "/config/locales/accountability.bs.yml" => "ccead2f5f20557ea4db1501de943f82b"
     }
   }
 ]
