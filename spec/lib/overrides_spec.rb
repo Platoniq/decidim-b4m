@@ -11,11 +11,6 @@ checksums = [
     files: {
       # views
       "/app/views/layouts/decidim/footer/_mini.html.erb" => "ccead2f5f20557ea4db1501de943f82b"
-    },
-    package: "decidim-accountability",
-    files: {
-      # locales
-      "/config/locales/decidim/accountability/bs.yml" => "ccead2f5f20557ea4db1501de943f82b"
     }
   }
 ]
