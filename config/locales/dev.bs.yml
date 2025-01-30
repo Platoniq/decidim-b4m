@@ -2,7 +2,7 @@
 bs:
   decidim:
     components:
-      blogs:
+      dummy:
         settings:
           step:
             endorsements_blocked: Podrške su onemogućene

@@ -1,0 +1,34 @@
+---
+bs:
+  activemodel:
+    attributes:
+      participatory_process:
+        scope_type_max_depth_id: Obim dubine filtera
+        show_metrics: Prikaži metrike
+  decidim:
+    admin:
+      models:
+        participatory_process_user_role:
+          roles:
+            valuator: Ocjenjivač
+      participatory_process_user_roles:
+        edit:
+          title: Ažuriraj administratora participatornog procesa
+        new:
+          title: Novi administrator participatornog prostora
+    events:
+      participatory_process:
+        role_assigned:
+          email_intro: Imenovani ste na funkciju %{role} za participatorni proces "%{resource_title}".
+          email_outro: Dobili ste ovo obavještenje zbog toga što ste %{role} participatornog procesa "%{resource_title}".
+          email_subject: Imenovani ste na funkciju %{role} %{resource_title}.
+          notification_title: Imenovani ste na funkciju %{role} participatornog procesa <a href="%{resource_url}">%{resource_title}</a>.
+    participatory_process_groups:
+      content_blocks:
+        stats:
+          name: Statistika
+    participatory_processes:
+      admin:
+        participatory_processes:
+          form:
+            scope_type_max_depth_help: Ograniči obim dubine filtera; Filter će pokazivati od općeg ka odabranom tipu obima.

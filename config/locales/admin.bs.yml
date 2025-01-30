@@ -3,7 +3,7 @@ bs:
   activemodel:
     attributes:
       area:
-        area_type: Tip oblasti
+        area_type: Tip područja
         name: Ime
         organization: Organizacija
       area_type:
@@ -13,158 +13,97 @@ bs:
       attachment:
         attachment_collection_id: Fascikla
         description: Opis
-        file: Fajl
-        title: Attachment or image name
-        weight: Order position
+        file: Datoteka
       attachment_collection:
         description: Opis
         name: Ime
-        weight: Order position
       category:
         description: Opis
         name: Ime
         parent_id: Roditelj
-        weight: Order position
       component:
         name: Ime
         published_at: Objavljeno
-        weight: Order position
-      external_domain:
-        value: Value
-      help_section:
-        content: Content
       id: ID
-      import:
-        user_group_id: Create imports as
       newsletter:
-        body: Glavni deo teksta
-        send_to_all_users: Send to all users
-        send_to_followers: Send to followers
-        send_to_participants: Send to participants
+        body: Glavni dio teksta
         subject: Naslov
       organization:
-        admin_terms_of_service_body: Body for the admin terms of service
         alert_color: Upozorenje
-        available_authorizations: Available authorizations
         badges_enabled: Omogući značke
-        comments_max_length: Comments max length (Leave 0 for default value)
         cta_button_path: Put dugmeta poziva na akciju
         cta_button_text: Tekst dugmeta poziva na akciju
-        customize_welcome_notification: Prilagodi obaveštenje dobrodošlice
-        default_locale: Podrazumevana vrednost
+        customize_welcome_notification: Prilagodi obavijest dobrodošlice
+        default_locale: Podrazumijevana vrijednost
         description: Opis
         enable_omnipresent_banner: Prikaži sveprisutni baner
-        enable_participatory_space_filters: Enable participatory space filters
         facebook_handler: Administrator Facebook-a
         favicon: Ikona
-        force_authentication: Force authentication
-        force_users_to_authenticate_before_access_organization: Force users to authenticate before access organization
-        from: Sender's email address
         github_handler: Administrator GitHub-a
         header_snippets: Fragmenti zaglavlja
-        highlight_alternative_color: Highlight, alternative
-        highlight_color: Highlight
-        highlighted_content_banner_action_subtitle: Podnastlov dugmeta akcije
+        highlighted_content_banner_action_subtitle: Podnaslov dugmeta akcije
         highlighted_content_banner_action_title: Naslov dugmeta akcije
         highlighted_content_banner_action_url: Link dugmeta akcije
         highlighted_content_banner_enabled: Prikaži istaknut baner sadržaja
         highlighted_content_banner_image: Slika
         highlighted_content_banner_short_description: Kratak opis
         highlighted_content_banner_title: Naslov
-        host: Host
         instagram_handler: Administrator Instagram-a
         logo: Logo
-        machine_translation_display_priority: Machine translation display priority
-        machine_translation_display_priority_original: Original text first
-        machine_translation_display_priority_translation: Translated text first
         name: Ime
-        official_img_footer: Zvanično podnožje logoa
-        official_url: Zvaničan link organizacije
+        official_img_footer: Službeno podnožje logotipa
+        official_url: Službeni link organizacije
         omnipresent_banner_short_description: Kratak opis
         omnipresent_banner_title: Naslov
         omnipresent_banner_url: Adresa
-        organization_admin_email: Organization admin email
-        organization_admin_name: Organization admin name
-        organization_locales: Organization locales
         primary_color: Primarni
         reference_prefix: Prefiks reference
         rich_text_editor_in_public_views: Omogući korisnicima uređivanje teksta sa formatiranjem
         secondary_color: Sekundarni
-        secondary_hosts: Secondary hosts
-        send_welcome_notification: Pošalji obaveštenje dobrodošlice
-        success_color: Uspeh
-        tertiary_color: Tertiary
+        send_welcome_notification: Pošalji obavijest dobrodošlice
+        success_color: Uspjeh
         time_zone: Vremenska zona
-        tos_version: Verzija uslova korišćenja
-        twitter_handler: X handler
+        tos_version: Verzija uslova korištenja
         user_groups_enabled: Omogući grupe
-        users_registration_mode: Users registration mode
         warning_color: Upozorenje
-        welcome_notification_body: Glavni tekst obaveštenja dobrodošlice
-        welcome_notification_subject: Naslov obaveštenja dobrodošlice
+        welcome_notification_body: Glavni tekst obavijesti dobrodošlice
+        welcome_notification_subject: Naslov obavijesti dobrodošlice
         youtube_handler: Administrator YouTube-a
-      participatory_space_private_user:
-        email: Email
-        name: Name
       scope:
         code: Kod
         name: Ime
         organization: Organizacija
         parent_id: Roditelj
-        scope_type: Tip opsega
-        scope_type_id: Tip opsega
+        scope_type: Tip područja
+        scope_type_id: Tip područja
       scope_type:
         name: Ime
         organization: Organizacija
         plural: Množina
-      settings:
-        scope_id: Scope
       static_page:
-        allow_public_access: Allow access without authentication
-        changed_notably: Bilo je primetnih promena.
+        changed_notably: Ima značajnih promjena.
         content: Sadržaj
         organization: Organizacija
         show_in_footer: Prikaži u podnožju
-        slug: Zadnji deo URL-a
+        slug: Zadnji dio URL-a
         title: Naslov
-        topic_id: Topic
-        weight: Order position
       static_page_topic:
         description: Opis
-        name: Topic name
         show_in_footer: Prikaži u podnožju
         title: Naslov
-        weight: Order position
       user_group_csv_verification:
-        file: Fajl
+        file: Datoteka
     errors:
       models:
-        newsletter:
-          attributes:
-            base:
-              at_least_one_space: Select at least one participatory space.
         organization:
           attributes:
             official_img_footer:
-              allowed_file_content_types: Neodgovarajući fajl slike
-        participatory_space_private_user_csv_import:
-          attributes:
-            file:
-              malformed: Malformed import file, please read through the instructions carefully and make sure the file is UTF-8 encoded.
-        user_group_csv_verification:
-          attributes:
-            file:
-              malformed: Malformed import file, please read through the instructions carefully and make sure the file is UTF-8 encoded.
-      new_import:
-        attributes:
-          file:
-            invalid_file: Invalid file provided, please check that the file is correctly formatted.
-            invalid_mime_type: Invalid MIME type.
+              allowed_file_content_types: Pogrešna datoteka slike
   activerecord:
     attributes:
       decidim/static_page:
         content: Sadržaj
-        slug: Zadnji deo URL-a
+        slug: Zadnji dio URL-a
         title: Naslov
       doorkeeper/application:
         authorize_url: Autorizuj URL
@@ -173,88 +112,50 @@ bs:
         organization_name: Ime organizacije
         organization_url: Link organizacije
         redirect_uri: Preusmeren URL
-        site: Veb stranica
+        site: Web stranica
   decidim:
     admin:
       actions:
         add: Dodaj
-        attachment:
-          new: New attachment
-        attachment_collection:
-          new: New attachment folder
         browse: Pregledaj
-        category:
-          new: New category
-        export: Export all
-        export-selection: Export selection
-        import: Import
         manage: Upravljaj
-        newsletter:
-          new: New newsletter
-        participatory_space_private_user:
-          new: New participatory space private user
         per_page: Po stranici
         permissions: Dozvole
-        reject: Odbaci
-        send_me_a_test_email: Send me a test email
-        share: Share
-        user:
-          new: New admin
-        verify: Overi
-      admin_terms_of_service:
-        accept:
-          error: There was an error while accepting the admin terms of service.
-          success: Great! You have accepted the admin terms of service.
-        actions:
-          accept: I agree with the terms
-          are_you_sure: Are you sure you want to refuse the admin terms of service?
-          refuse: Refuse the admin terms
-          title: Agree to the terms of service
-        required_review:
-          alert: 'Required: Review our admin terms of service'
-          callout: Please take a moment to review the admin terms of service. Otherwise you will not be able to manage the platform.
-          cta: Review them now.
-        title: Admin terms of service
+        reject: Odbij
+        verify: Ovdri
       area_types:
         create:
-          error: Nastao je problem pri stvaranju novog tipa oblasti.
-          success: Tip oblasti je uspešno stvoren.
-        destroy:
-          success: Area type successfully destroyed.
+          error: Došlo je do problema pri stvaranju novog tipa područja.
+          success: Tip područja je uspješno stvoren.
         edit:
-          title: Izmeni tip oblasti
+          title: Izmijeni tip područja
           update: Ažuriraj
         new:
-          create: Stvori tip oblasti
-          title: Nov tip oblasti
+          create: Stvori tip područja
+          title: Novi tip područja
         update:
-          error: Nastao je problem pri ažuriranju ovog tipa oblasti.
-          success: Area type updated successfully.
+          error: Došlo je do problema pri ažuriranju ovog tipa područja.
       areas:
         create:
-          error: Nastao je problem pri stvaranju nove oblasti.
-          success: Oblast je uspešno stvorena.
-        destroy:
-          has_spaces: This area has dependent spaces. Please make sure no Participatory Space references this area before deleting it.
-          success: Area successfully destroyed.
+          error: Došlo je do problema pri stvaranju novog područja.
+          success: Područje je uspješno stvoreno.
         edit:
-          title: Uređivanje oblasti
+          title: Uređivanje područja
           update: Ažuriraj
         new:
-          create: Stvori oblast
-          title: Nova oblast
-        no_areas: Nema Oblasti
+          create: Stvori područje
+          title: Novo područje
+        no_areas: Nema Područja
         update:
-          error: Nastao je problem pri ažuriranju ove oblasti.
-          success: Area updated successfully.
+          error: Došlo je do problema pri ažuriranju ovog područja.
       attachment_collections:
         create:
-          error: Nastao je problem pri stvaranju nove fascikle.
-          success: Fascikla je uspešno stvorena.
+          error: Došlo je do problema pri stvaranju nove fascikle.
+          success: Fascikla je uspješno stvorena.
         destroy:
-          success: Fascikla je uspešno uništena.
+          success: Fascikla je uspješno uništena.
         edit:
-          title: Izmeni fasciklu
+          title: Izmijeni fasciklu
           update: Ažuriraj
         index:
           attachment_collections_title: Fascikle priloga
@@ -262,16 +163,16 @@ bs:
           create: Stvori
           title: Nova fascikla
         update:
-          error: Nastao je problem pri ažuriranju ove fascikle.
-          success: Fascikla je uspešno ažurirana.
+          error: Došlo je do problema pri ažuriranju ove fascikle.
+          success: Fascikla je uspješno ažurirana.
       attachments:
         create:
-          error: Nastao je problem pri stvaranju novog priloga.
-          success: Prilog je uspešno stvoren.
+          error: Došlo je do problema pri stvaranju novog priloga.
+          success: Prilog je uspješno stvoren.
         destroy:
-          success: Prilog je uspešno uništen.
+          success: Prilog je uspješno uništen.
         edit:
-          title: Izmeni prilog
+          title: Izmijeni prilog
           update: Ažuriraj
         index:
           attachments_title: Prilozi
@@ -279,29 +180,19 @@ bs:
           create: Stvori prilog
           title: Novi prilog
         update:
-          error: Nastao je problem pri ažuriranju ovog priloga.
-          success: Prilog je uspešno ažuriran.
-      attachments_privacy_warning:
-        message: Be careful when working with attachments in a private space. Any participant could share this document to others.
+          error: Došlo je do problema pri ažuriranju ovog priloga.
+          success: Prilog je uspješno ažuriran.
       autocomplete:
         no_results: Nema rezultata
-        search_prompt: Type at least three characters to search.
-      block_user:
-        new:
-          action: Block account and send justification
-          already_reported_html: Continuing with this action you will also hide all the participants contents.
-          description: Blocking a user will render their account unusable. You may provide in your justification any guidelines on ways you would consider unblocking the user.
-          justification: Justification
-          title: Block User %{name}
       categories:
         create:
-          error: Nastao je problem pri stvaranju ove kategorije.
-          success: Kategorija je uspešno stvorena.
+          error: Došlo je do problema pri stvaranju ove kategorije.
+          success: Kategorija je uspješno stvorena.
         destroy:
-          error: Nastao je problem pri brisanju ove kategorije. Molimo Vas da prvo obrišete sve podkategorije, proverite da nijedan drugi entitet ne pripada ovoj kategoriji i pokušate ponovo.
-          success: Kategorija je uspešno obrisana.
+          error: Došlo je do problema pri brisanju ove kategorije. Molimo Vas da prvo obrišete sve podkategorije, provjerite da nijedan drugi entitet ne pripada ovoj kategoriji i pokušajte ponovo.
+          success: Kategorija je uspješno obrisana.
         edit:
-          title: Izmeni kategoriju
+          title: Izmijeni kategoriju
           update: Ažuriraj
         index:
           categories_title: Kategorije
@@ -309,141 +200,57 @@ bs:
           create: Stvori kategoriju
           title: Nova kategorija
         update:
-          error: Nastao je problem pri ažuriranju ove kategorije.
-          success: Kategorija je uspešno ažurirana.
+          error: Došlo je do problema pri ažuriranju ove kategorije.
+          success: Kategorija je uspješno ažurirana.
       component_permissions:
         update:
-          error: Nastao je problem pri ažuriranju dozvola ove komponente.
-          success: Dozvole su uspešno ažurirane.
+          error: Došlo je do problema pri ažuriranju dozvola ove komponente.
+          success: Dozvole su uspješno ažurirane.
       components:
         create:
-          error: Nastao je problem pri stvaranju ove komponente.
-          success: Komponenta je uspešno stvorena.
-          success_landing_page: Component created successfully. You can add a content block for this component in the home of the space. Go to <a href="%{landing_page_path}">Landing page</a> to configure it.
+          error: Došlo je do problema pri stvaranju ove komponente.
+          success: Komponenta je uspješno stvorena.
         destroy:
-          error: Nastao je problem pri uništavanju ove komponente.
-          success: Komponenta je uspešno obrisana.
+          error: Došlo je do problema pri uništavanju ove komponente.
+          success: Komponenta je uspješno obrisana.
         edit:
           title: Uređivanje komponente
           update: Ažuriraj
         form:
-          default_step_settings: Podrazumevana podešavanja koraka
-          global_settings: Opšta podešavanja
+          default_step_settings: Podrazumijevana podešavanja koraka
+          global_settings: Opća podešavanja
           step_settings: Podešavanja koraka
         index:
           add: Dodavanje komponente
           headers:
             actions: Akcije
             name: Ime komponente
-            scope: Component scope
             type: Tip komponente
         new:
           add: Dodaj komponentu
           title: 'Dodaj komponentu: %{name}'
         publish:
-          success: Komponenta je uspešno objavljena.
+          success: Komponenta je uspješno objavljena.
         title: Komponente
         unpublish:
-          success: Objava komponente je uspešno povučena.
+          success: Objavljivanje komponente je uspješno povučeno.
         update:
-          error: Pojavio se problem pri ažuriranju ove komponente.
-          success: Komponenta je uspešno ažurirana.
-      conflicts:
-        attempts: Attempts
-        'false': 'No'
-        index:
-          text: Search by current user email, name or nickname.
-        managed_user_name: Managed User
-        solved: Solved
-        title: Verification conflicts
-        transfer:
-          email: Email
-          error: There was a problem transferring the current participant to managed participant.
-          name: Name
-          reason: Reason
-          success: The current transfer has been successfully completed.
-          title: Transfer
-        'true': 'Yes'
-        user_name: User
-      content_blocks:
-        create:
-          error: There was an error while creating the content block.
-          success: Content block successfully created.
-        destroy:
-          error: There was a problem trying to delete this content block.
-          success: Content block successfully deleted.
-        edit:
-          active_content_blocks: Active content blocks
-          add: Add content block
-          destroy_confirmation: Are you sure you want to delete this content block?
-          inactive_content_blocks: Inactive content blocks
-          title: Page contents
-          update: Update
+          error: Došlo je do problema pri ažuriranju ove komponente.
+          success: Komponenta je uspješno ažurirana.
       dashboard:
-        pending_moderations:
-          anouncement:
-            one: There are %{count} pending moderation
-            few: There are %{count} pending moderations
-            other: There are %{count} pending moderations
-          goto_moderation: Go to global moderations
-          title: Pending Moderations
         show:
-          dropdown: Dropdown
           view_more_logs: Pogledaj još zapisa iz evidencije
-      domain_whitelist:
-        form:
-          domain_too_short: Domain too short
-        update:
-          error: Failed to update domain whitelist.
-          success: Domain whitelist updated successfully.
       exports:
         export_as: "%{name} kao %{export_format}"
-        formats:
-          CSV: CSV
-          Excel: Excel
-          FormPDF: PDF
-          JSON: JSON
-        notice: Your export is currently in progress. You will receive an email when it is complete.
       filters:
         category_id_eq:
           label: Kategorija
         filter_label: Filter
-        invitation_accepted_at_present:
-          label: Invite accepted
-          values:
-            'false': 'No'
-            'true': 'Yes'
-        last_sign_in_at_present:
-          label: Ever logged in
-          values:
-            'false': 'No'
-            'true': 'Yes'
-        moderated_users:
-          reports_reason_eq:
-            label: Report reason
-            values:
-              does_not_belong: Does not belong
-              offensive: Offensive
-              spam: Spam
-        moderations:
-          reportable_type_string_eq:
-            label: Type
         officialized_at_null:
           label: Državno
           values:
             'false': Službeno
             'true': Neslužbeno
-        participatory_space_private_users:
-          user_invitation_accepted_at_not_null:
-            label: Invitation accepted
-            values:
-              'false': Not accepted
-              'true': Accepted
-          user_invitation_sent_at_not_null:
-            label: Invitation sent
-            values:
-              'false': Not sent
-              'true': Sent
         private_space_eq:
           label: Privatno
           values:
@@ -455,147 +262,71 @@ bs:
             'false': Objavljeno
             'true': Neobjavljeno
         scope_id_eq:
-          label: Scope
+          label: Područje
         search_label: Pretraži
         search_placeholder:
           name_or_nickname_or_email_cont: Pretraži %{collection} prema e-pošti, imenu ili nadimku.
-          report_count_eq: Report count eq
-          reported_id_string_or_reported_content_cont: Search %{collection} by reportable id or content.
           title_cont: Pretraži %{collection} prema nazivu.
-          user_name_or_user_email_cont: Search %{collection} by name or email.
-          user_name_or_user_nickname_or_user_email_cont: Search %{collection} by email, name or nickname.
-        state_eq:
-          label: State
-          values:
-            all: All
-            pending: Pending
-            rejected: Rejected
-            verified: Verified
-      forms:
-        file_help:
-          import:
-            explanation: 'Guidance for file:'
-            message_1: CSV, JSON and Excel (.xlsx) files are supported
-            message_2: For CSV files, the separator between columns must be a semicolon (";")
       help_sections:
-        error: There was a problem updating the help sections.
         form:
           save: Sačuvaj
-        success: Help sections updated successfully.
       impersonatable_users:
         index:
           filter:
-            all: Sve
-            managed: Obrađeno
-            not_managed: Neobrađeno
-          impersonate: Predstavlja
+            all: Svi
+            managed: Upravljani
+            not_managed: Neupravljani
+          impersonate: Predstavljaj
           impersonate_new_managed_user: Upravljanje novim učesnikom
-          managed: Obrađeno
+          managed: Upravljani
           name: Ime
           needs_authorization_warning: Potrebna vam je barem jedna aktivirana autorizacija za ovu organizaciju.
-          not_managed: Neobrađeno
-          promote: Unapredi
+          not_managed: Neupravljani
+          promote: Unaprijedi
           search: Pretraži
           status: Status
           view_logs: Pogledaj evidenciju
       impersonations:
         close_session:
-          error: Pojavio se problem pri zatvaranju aktuelne sesije upravljanja učesnicima.
-          success: Aktuelna sesija predstavljanja je uspešno okončana.
+          error: Došlo je do problema pri zatvaranju trenutne sesije upravljanja učesnicima.
+          success: Trenutna sesija predstavljanja je uspješno završena.
         create:
-          error: Pojavio se problem prilikom upravljanja učesnikom.
-          success: Upravljani učesnik je uspešno kreiran.
+          error: Došlo je do problema pri upravljanju učesnikom.
+          success: Upravljani učesnik je uspješno kreiran.
         form:
           authorization_method: Metod autorizacije
           name: Ime
           reason: Razlog
         new:
-          impersonate: Predstavlja
+          impersonate: Predstavljaj
           impersonate_existing_managed_user: Upravljaj učesnikom "%{name}"
           impersonate_existing_user: Upravljaj učesnikom "%{name}"
           impersonate_new_managed_user: Upravljanje novim učesnikom
-      imports:
-        and: and
-        data_errors:
-          duplicate_headers:
-            detail: Please check that file contains required columns or headers only once.
-            message:
-              one: Duplicate column %{columns}.
-              few: Duplicate columns %{columns}.
-              other: Duplicate columns %{columns}.
-          invalid_indexes:
-            lines:
-              detail: Please check that these lines are formatted correctly and contain valid records.
-              message:
-                one: Found an error in the import file on line %{indexes}.
-                few: Found errors in the import file on lines %{indexes}.
-                other: Found errors in the import file on lines %{indexes}.
-            records:
-              detail: Please check that these records are formatted correctly and contain valid records.
-              message:
-                one: Found an error in the import file for records with order numbers %{indexes}.
-                few: Found errors in the import file for records with order numbers %{indexes}.
-                other: Found errors in the import file for records with order numbers %{indexes}.
-          missing_headers:
-            detail: Please check that the file contains required columns.
-            message:
-              one: Missing column %{columns}.
-              few: Missing columns %{columns}.
-              other: Missing columns %{columns}.
-        error: There was a problem during the import.
-        example_error: There was a problem creating an example for the given type.
-        new:
-          accepted_mime_types:
-            csv: CSV
-            json: JSON
-            xlsx: Excel (.xlsx)
-          actions:
-            back: Back
-          download_example: Download example
-          download_example_format: Example as %{name}
-          file_legend: Add an import file that will be parsed.
-          import: Import
-        notice: "%{count} %{resource_name} successfully imported."
-      logs:
-        filters:
-          participatory_space: Find participatory space
-          text: Search by user email, name or nickname.
-          user: User
-        logs_list:
-          no_logs_yet: There are no logs yet.
-          no_matching_logs: There are no logs with the provided search filters. Try to change them and retry.
       managed_users:
         promotion:
-          error: Pojavio se problem pri unapređivanju učesnika.
-          success: Upravljani učesnik je uspešno unapređen.
+          error: Došlo je do problema pri unaprijeđivanju učesnika.
+          success: Upravljani učesnik je uspješno unaprijeđen.
         promotions:
           new:
-            explanation: Upravljani učesnici mogu biti unapređeni u regularne učesnike. To znači da će biti pozvani da se prijave, nakon čega nećete više biti u mogućnosti da upravljate njihovim nalozima. Pozvani učesnici će primiti e-mail i potrebno je da prihvate poziv.
-            new_managed_user_promotion: Unapređenje novog upravljanog učesnika
-            promote: Unapredi
+            explanation: Upravljani učesnici mogu biti unaprijeđeni u regularne učesnike. To znači da će biti pozvani da se prijave, nakon čega više nećete moći upravljati njihovim računima. Pozvani učesnici će primiti e-mail i moraju prihvatiti poziv.
+            new_managed_user_promotion: Unaprijeđenje novog upravljanog učesnika
+            promote: Unaprijedi
       menu:
         admin_log: Zapisnik aktivnosti administratora
-        admins: Administratori
+        admins: Administrator
         appearance: Izgled
-        area_types: Tipovi oblasti
-        areas: Oblasti
-        components: Components
+        area_types: Tipovi područja
+        areas: Područja
         configuration: Konfiguracija
-        content: Reported content
-        external_domain_whitelist: Allowed external domains
         help_sections: Sekcije za pomoć
         homepage: Početna stranica
         impersonations: Predstavljanja
         manage: Upravljaj
-        moderation: Global moderations
         newsletters: Bilteni
         participants: Učesnici
-        reported_users: Reported participants
-        scope_types: Vrste oblasti
-        scopes: Oblasti
-        see_site: See site
+        scope_types: Vrste područja
+        scopes: Područja
         settings: Podešavanja
-        static_page_topics: Topics
         static_pages: Stranice
         user_groups: Grupe
         users: Učesnici
@@ -605,7 +336,7 @@ bs:
       models:
         area:
           fields:
-            area_type: Tip oblasti
+            area_type: Tip područja
             name: Ime
         area_type:
           fields:
@@ -632,10 +363,10 @@ bs:
             user: Učesnik
         newsletter:
           fields:
-            created_at: Stvoreno
+            created_at: Kreirano
             progress: Napredak
-            sent_at: Poslato
-            sent_to: Poslato
+            sent_at: Poslano
+            sent_to: Poslano
             subject: Naslov
           name: Bilten
         participatory_space_private_user:
@@ -643,19 +374,11 @@ bs:
         scope:
           fields:
             name: Ime
-            scope_type: Tip opsega
+            scope_type: Tip područja
         scope_type:
           fields:
             name: Ime
             plural: Množina
-        share_token:
-          fields:
-            created_at: Stvoreno
-            expires_at: Expires at
-            last_used_at: Last time used
-            times_used: Times used
-            token: Token
-            user: Created by
         static_page:
           fields:
             created_at: Kreirano na
@@ -664,7 +387,6 @@ bs:
           fields:
             created_at: Datum kreiranja
             email: E-pošta
-            last_sign_in_at: Last log in date
             name: Ime
             role: Uloga
             roles:
@@ -677,72 +399,32 @@ bs:
             created_at: Kreirano na
             document_number: Broj dokumenta
             name: Ime
-            nickname: Nickname
             phone: Telefon
             state: Država
             users_count: Broj učesnika
-      moderated_users:
-        index:
-          actions:
-            block: Block User
-            title: Actions
-            unblock: Unblock User
-            unreport: Unreport
-          name: Name
-          nickname: Nickname
-          reason: Reason
-          reports: Reports count
-          title: Reported participants
-        report:
-          reasons:
-            does_not_belong: Does not belong
-            offensive: Offensive
-            spam: Spam
-        tabs:
-          blocked: Blocked
-          unblocked: Not Blocked
       moderations:
-        index:
-          title: Reported content
         report:
           reasons:
             does_not_belong: Ne pripada
-            hidden_during_block: Hidden while blocking user
             offensive: Uvredljivo
             spam: Spam
-        reports:
-          index:
-            author: Author(s)
-            callout_html: A content appears in the moderation panel when it has been signaled by a user (can be anyone with a registered account) by clicking on the %{icon} flag next to the item.
-            content_original_language: Content original language
-            participatory_space: Participatory space
-            reported_content: Reported content
-            see_current: See current
-            see_original: See original
-            title: Moderation reports
-          show:
-            report_details: Reason details
-            report_language: Report language
-            report_reason: Reason
-            title: Report details
       newsletter_templates:
         index:
-          preview_template: Pregled
+          preview_template: Pregledaj
           title: Šabloni biltena
-          use_template: Koristite ovaj šablon
+          use_template: Koristi ovaj šablon
         show:
-          preview: 'Pregledajte šablon %{template_name}'
-          use_template: Koristite ovaj šablon
+          preview: 'Pregledaj šablon %{template_name}'
+          use_template: Koristi ovaj šablon
       newsletters:
         create:
-          error: Pojavio se problem pri kreiranju ovog biltena.
-          success: Newsletter created successfully. Please review it before sending.
+          error: Došlo je do problema pri kreiranju ovog biltena.
         deliver:
-          error: Pojavio se problem pri dostavljanju ovog biltena.
-          success: Bilten je uspešno dostavljen.
+          error: Došlo je do problema pri dostavljanju ovog biltena.
+          success: Bilten je uspješno dostavljen.
         destroy:
           error_already_sent: 'Bilten se ne može ukloniti jer je već dostavljen.'
-          success: Bilten je uspešno uklonjen.
+          success: Bilten je uspješno uklonjen.
         edit:
           save_and_preview: Sačuvaj i pregledaj
           title: Uredi bilten
@@ -750,83 +432,63 @@ bs:
           all: sve
           all_users: 'Svi korisnici'
           and: 'i'
-          confirm_delete: Da li ste sigurni da želite da obrišete ovaj bilten?
+          confirm_delete: Da li ste sigurni da želite obrisati ovaj bilten?
           followers: 'pratioci'
-          has_been_sent_to: 'Poslat je:'
-          no_scopes: Nema oblasti
-          not_sent: Nije poslato
+          has_been_sent_to: 'Poslan je:'
+          no_scopes: Nema područja
+          not_sent: Nije poslano
           participants: 'učesnici'
-          segmented_to: 'Podeljeno po %{subject}:'
-          subscribed_count: 'Broj pratilaca:'
+          segmented_to: 'Segmentirano po %{subject}:'
+          subscribed_count: 'Broj pretplatnika:'
           title: Bilteni
         new:
           save: Sačuvaj
           title: Novi bilten
         select_recipients_to_deliver:
           all_spaces: Svi
-          all_users_help: Pošalji biltene svim potvrđenim učesnicima.
-          confirm_deliver: Da li ste sigurni da želite da dostavite ovaj bilten? Ova radnja se ne može poništiti.
+          all_users_help: Pošalji biltene svim verificiranim učesnicima.
+          confirm_deliver: Da li ste sigurni da želite dostaviti ovaj bilten? Ova akcija se ne može poništiti.
           deliver: Dostavi bilten
-          followers_help: Pošalji bilten svim potvrđenim učesnicima koji prate bilo koji od odabranih prostora za učešće sa liste.
-          none: None
-          participants_help: Pošalji bilten svim potvrđenim učesnicima koji su učestvovali u bilo kojem od odabranih prostora za učešće sa liste.
-          recipients_count: Ovaj bilten biće dostavljen %{count} korisnicima.
-          scopes_help: Šalje bilten korisnicima koji su aktivirali makar jedan od odabranih opsega u podešavanjima "Moji interesi" svog naloga.
-          select_scopes: Filter za korisnike koji su aktivirali makar jedan od odabranih opsega u podešavanjima "Moji interesi" svog naloga.
-          select_spaces: Izaberite prostore da podelite bilten
-          select_users: Izaberite kojim korisnicima želite da pošaljete bilten
+          followers_help: Pošalji bilten svim verificiranim učesnicima koji prate bilo koji od odabranih prostora za učešće sa liste.
+          none: Nijedan
+          participants_help: Pošalji bilten svim verificiranim učesnicima koji su sudjelovali u bilo kojem od odabranih prostora za učešće sa liste.
+          recipients_count: Ovaj bilten će biti dostavljen <strong id='recipients_count'>%{count}</strong> korisnicima.
+          scopes_help: Šalje bilten korisnicima koji su aktivirali barem jedno od odabranih područja u podešavanjima "Moji interesi" njihovog računa.
+          select_scopes: Filter za korisnike koji su aktivirali barem jedno od odabranih područja u podešavanjima "Moji interesi" njihovog računa.
+          select_spaces: Izaberite prostore za dijeljenje biltena
+          select_users: Izaberite kojim korisnicima želite poslati bilten
           title: Izaberi primaoce za dostavu
-          warning: "Pažnja: Ovaj bilten će biti poslan samo korisnicima koji su aktivirali Želim da dobijam biltene u svojim podešavanjima obaveštenja."
-        send:
-          no_recipients: No recipients for this selection.
-        send_to_user:
-          sent_successfully: Newsletter has been sent successfully to %{email}
+          warning: "<strong>Pažnja:</strong> Ovaj bilten će biti poslan samo korisnicima koji su aktivirali <em>Želim da dobijam biltene</em> u svojim podešavanjima obavijesti."
         show:
           preview: Pregled
           select_recipients_to_deliver: Izaberi primaoce za dostavu
-          send_me_a_test_email: Send me a test email
           subject: Naslov
         update:
-          error: Nastao je problem pri ažuriranju ovog biltena.
-          success: Bilten je uspešno ažuriran. Molimo vas da ga pregledate pre slanja.
+          error: Došlo je do problema pri ažuriranju ovog biltena.
+          success: Bilten je uspješno ažuriran. Molimo vas da ga pregledate prije slanja.
       officializations:
-        block:
-          error: There was an error blocking the participant.
-          success: Participant successfully blocked.
-        create:
-          success: Participant successfully officialized.
-        destroy:
-          success: Participant successfully unofficialized.
         index:
           actions: Akcije
-          badge: Bedž
-          block: Block User
+          badge: Značka
           created_at: Kreirano u
           name: Ime
           nickname: Nadimak
-          not_officialized: Nije ozvaničeno
-          officialize: Ozvaniči
-          officialized: Ozvaničen
-          reofficialize: Ponovo ozvaniči
-          reports: Reports
-          show_email: Prikaži adresu e-pošte
+          not_officialized: Nije zvanično
+          officialize: Zvanično
+          officialized: Zvanično
+          reofficialize: Ponovo zvanično
+          show_email: Prikaži e-mail adresu
           status: Status
-          unblock: Unblock User
-          unofficialize: Razreši zvaničnog statusa
+          unofficialize: Ukloni zvaničnost
         new:
           badge: Zvanična oznaka
-          officialize: Ozvaniči
-          title: Ozvaniči status učesnika "%{name}"
+          officialize: Zvanično
+          title: Zvanično status učesnika "%{name}"
         show_email_modal:
-          description: If you need to contact a participant directly, you can click on the Show button to see their email address. This action will be logged.
           email_address: Adresa e-pošte
           full_name: Puno ime
-          hidden: sakriveno
+          hidden: skriveno
           show: Prikaži
-          title: Show participant's email address
-        unblock:
-          error: There was an error unblocking the participant.
-          success: Participant successfully unblocked.
       organization:
         edit:
           title: Uredi organizaciju
@@ -835,318 +497,32 @@ bs:
           facebook: Facebook
           github: GitHub
           instagram: Instagram
-          rich_text_editor_in_public_views_help: U pojedinim delovima teksta učesnici će uz pomoć programa moći da ubace HTML oznake.
-          social_handlers: Društvene
-          twitter: X
-          url: URL
+          rich_text_editor_in_public_views_help: U nekim dijelovima teksta učesnici će moći umetnuti HTML oznake putem uređivača.
+          social_handlers: Društvene mreže
           youtube: YouTube
         update:
-          error: Pojavio se problem pri ažuriranju ove organizacije.
-          success: Organizacija je uspešno ažurirana.
+          error: Došlo je do problema pri ažuriranju ove organizacije.
+          success: Organizacija je uspješno ažurirana.
       organization_appearance:
         edit:
           update: Ažuriraj
         form:
-          colors:
-            choose_color: Choose a primary color
-            colors_title: Organization colors
-            colors_warning_html: Warning! Changing these colors can break the accessibility contrasts. You can check the contrast of your choosing with <a href="https://webaim.org/resources/contrastchecker">WebAIM Contrast Checker</a> or other similar tools.
-            explanation: This tool helps you out to choose a color scheme, made up of hues equally spaced around the color wheel, that will be used in the organization's website.
-            legend_html: Main application colors, based on the <a href="https://www.color-meanings.com/triadic-colors/">Triadic algorithm</a>. The <i>secondary</i> color is auto-calculated from the primary color and the saturation you chose.
-            saturation: Saturation
-            title: Color chooser
-            update_suggested_colors: Update suggested colors
-          cta_button_path_help_html: 'You can overwrite where the Call To Action button in the homepage links to. Use partial paths, not full URLs here. Accepts letters, numbers, dashes and slashes, and must start with a letter. The Call To Action button is shown in the homepage between the welcome text and the description. Example: %{url}'
-          cta_button_text_help: You can overwrite the Call To Action button text in the homepage for each available language in your organization. If not set, the default value will be used. The Call To Action button is shown in the homepage between the welcome text and the description.
-          header_snippets:
-            header_snippets_help_html: Use this field to add things to the HTML head. The most common use is to integrate third-party services that require some extra JavaScript or CSS. Also, you can use it to add extra meta tags to the HTML. Note that this will only be rendered in public pages, not in the admin section. If the code interacts with external APIs or does not comply with the application security guidelines, it will be necessary to change the Content Security Policy. Read more about <a href="https://docs.decidim.org/develop/en/customize/content_security_policy">on the documentation site</a> .
-            title: HTML header snippets
-          homepage_appearance_title: Promeni izgled početne stranice
-          homepage_highlighted_content_banner_title: Highligted content banner
+          homepage_appearance_title: Promijeni izgled početne stranice
           images:
-            layout_appearance_title: Edit layout appearance
             preview: Pregled
-          omnipresent_banner_appearance_title: Izmeni sveprisutni baner
+          omnipresent_banner_appearance_title: Izmijeni sveprisutni baner
       organization_external_domain_whitelist:
         edit:
           update: Ažuriraj
-        external_domain:
-          down: Down
-          external_domain: External domain
-          remove: Remove
-          up: Up
-        form:
-          add: Add to whitelist
-          title: External domain whitelist
-      participatory_space_private_users:
-        create:
-          error: There was a problem adding a private participant for this participatory space.
-          success: Participatory space private participant access successfully created.
-        destroy:
-          error: There was a problem deleting a private participant for this participatory space.
-          success: Participatory space private participant access successfully destroyed.
-        index:
-          import_via_csv: Import via CSV
-          title: Participatory space private participant
-        new:
-          create: Create
-          title: New Participatory Space private participant.
-      participatory_space_private_users_csv_imports:
-        create:
-          invalid: There was a problem reading the CSV file. Please make sure you have followed the instructions.
-          success: CSV file uploaded successfully, we are sending an invitation email to participants. This might take a while.
-        new:
-          csv_upload:
-            title: Upload your CSV file
-          destroy:
-            button: Delete all private participants
-            confirm: Are you sure you want to delete all private participants? This action cannot be undone, you will not be able to recover them.
-            empty: You have no private participants.
-            explanation: You have %{count} private participants.
-            title: Delete private participants
-          example_file: 'Example file:'
-          explanation: 'Upload your CSV file. It must have two columns with email in the first column of the file and name in the last column of the file of the users that you want to add to the participatory space, without headers. Avoid using invalid chars like `<>?%&^*#@()[]=+:;"{}\|` in user name.'
-          explanation_example: |
-            john.doe@example.org%{csv_col_sep}John Doe
-            jane.doe@example.org%{csv_col_sep}Jane Doe
-          title: Import private participants via CSV
-          upload: Upload
-      reminders:
-        create:
-          error: There was a problem creating reminders.
-          success:
-            one: "%{count} user will be reminded."
-            few: "%{count} users will be reminded."
-            other: "%{count} users will be reminded."
-        new:
-          submit: Send
-      resource_permissions:
-        edit:
-          submit: Submit
-          title: Edit permissions
-        update:
-          success: Permissions updated successfully.
-      resources:
-        index:
-          headers:
-            scope: Scope
-      scope_types:
-        create:
-          error: There was a problem creating a new scope type.
-          success: Scope type created successfully.
-        destroy:
-          success: Scope type successfully destroyed
-        edit:
-          title: Edit scope type
-          update: Update
-        new:
-          create: Create scope type
-          title: New scope type
-        update:
-          error: There was a problem updating this scope type.
-          success: Scope type updated successfully
-      scopes:
-        create:
-          error: There was a problem creating a new scope.
-          success: Scope created successfully.
-        destroy:
-          success: Scope successfully destroyed.
-        edit:
-          title: Edit scope
-          update: Update
-        new:
-          create: Create scope
-          title: New scope
-        no_scopes: No scopes at this level.
-        update:
-          error: There was a problem updating this scope.
-          success: Scope updated successfully
-      share_tokens:
-        actions:
-          confirm_destroy: Are you sure you want to delete this token?
-          destroy: Delete
-          share: Share
-        destroy:
-          error: There was a problem destroying the token.
-          success: Token destroyed successfully.
-        share_tokens:
-          empty: There are no active tokens.
-          help: These tokens are used to publicly share this unpublished resource to any user. They will be hidden when the resource is published. Click on the token's share icon to visit the shareable URL.
-          title: Share tokens
       shared:
         gallery:
           add_images: Dodaj slike
-          edit_images: Edit images
-          gallery_legend: Dodaj galeriju slika (opciono)
-      static_page_topics:
-        create:
-          error: There was a problem creating a new topic.
-          success: Topic created successfully.
-        destroy:
-          success: Topic successfully destroyed.
-        edit:
-          title: Edit topic
-          update: Update topic
-        new:
-          create: Create topic
-          title: New topic
-        update:
-          error: There was a problem updating this topic.
-          success: Topic updated successfully
-      static_pages:
-        actions:
-          view: View public page
-        create:
-          error: There was a problem creating a new page.
-          success: Page created successfully.
-        destroy:
-          success: Page successfully destroyed
-        edit:
-          changed_notably_help: If checked, participants will be notified to accept the new terms of service.
-          last_notable_change: 'Last notable change: %{tos_version_formatted}'
-          title: Edit page
-          update: Update
-        form:
-          none: None
-          slug_help_html: 'Use partial paths, not full URLs here. Accepts letters, numbers, dashes and slashes, and must start with a letter. Example: %{url}'
-        index:
-          last_notable_change: Last notable change
-        new:
-          create: Create page
-          title: New page
-        topic:
-          empty: There are no pages under this topic.
-          without_topic: Pages without topic
-        update:
-          error: There was a problem updating this page.
-          success: Page updated successfully.
+          gallery_legend: Dodaj galeriju slika (opcionalno)
       titles:
-        admin_log: Admin log
-        area_types: Area types
-        areas: Areas
-        authorization_workflows: Verification methods
-        dashboard: Dashboard
-        edit_external_domains: External domain whitelist
-        edit_landing_page: Page contents
-        edit_organization_appearance: Edit homepage appearance
-        impersonatable_users: Manageable participants
-        impersonations: Participants management
-        menu: Menu
-        metrics: Metrika
-        page_topics: Topics
-        pages: Pages
-        panel: Admin
-        participants: Participants
-        scope_types: Scope types
-        scopes: Scopes
+        metrics: Metrike
         statistics: Aktivnost
-        user_groups: Groups
-        users: Administrators
-      user_group:
-        csv_verify:
-          invalid: There was a problem reading the CSV file.
-          success: CSV file uploaded successfully, we are verifying the groups matching the criteria. This might take a while.
-        reject:
-          invalid: There was a problem rejecting this group.
-          success: Group successfully rejected.
-        verify:
-          invalid: There was a problem verifying this group.
-          success: Group successfully verified.
-      user_groups:
-        index:
-          state:
-            pending: Pending
-            rejected: Rejected
-            verified: Verified
-          verify_via_csv: Verify via CSV
-      user_groups_csv_verifications:
-        new:
-          example_file: 'Example file:'
-          explanation: Upload your CSV file. It must have the official emails of the groups in your organization in the first column of the file, without headers. Only groups that have confirmed their email and that have an email appearing in the CSV file will be validated.
-          explanation_example: |
-            acme@example.org
-            bubba.gump@example.org
-          title: Upload your CSV file
-          upload: Upload
-      users:
-        create:
-          error: There was a problem inviting this admin.
-          success: Participant successfully invited.
-        destroy:
-          error: There was a problem trying to delete this admin.
-          success: Participant is no longer an administrator.
-        form:
-          email: Email
-          name: Name
-          role: Role
-        new:
-          create: Invite
-          title: Invite new administrator
       users_statistics:
         users_count:
-          admins: Admins
-          last_day: Poslednji dan
-          last_month: Poslednji mesec
-          last_week: Poslednje nedelje
-          no_users_count_statistics_yet: There are no users count statistics yet.
-          participants: Participants
-    forms:
-      errors:
-        impersonate_user:
-          reason: You need to provide a reason when managing a non-managed participant.
-    metrics:
-      blocked_users:
-        object: blocked users
-        title: Blocked users
-      reported_users:
-        object: reported users
-        title: Reported users
-      user_reports:
-        object: user reports
-        title: User reports
-    moderations:
-      actions:
-        expand: Expand
-        hidden: Hidden
-        hide: Hide
-        not_hidden: Not hidden
-        title: Actions
-        unhide: Unhide
-        unreport: Unreport
-      admin:
-        reportable:
-          hide:
-            invalid: There was a problem hiding the resource.
-            success: Resource successfully hidden.
-          unhide:
-            invalid: There was a problem unhiding the resource.
-            success: Resource successfully unhidden.
-          unreport:
-            invalid: There was a problem unreporting the resource.
-            success: Resource successfully unreported.
-      models:
-        moderation:
-          fields:
-            created_at: Reported at
-            deleted_resource: Deleted resource
-            hidden_at: Hidden at
-            participatory_space: Participatory space
-            report_count: Reports count
-            reportable_id: ID
-            reportable_type: Type
-            reported_content_url: Reported content URL
-            reports: Reason
-            visit_url: Visit URL
-        report:
-          fields:
-            details: Reason details
-            locale: Language
-            reason: Reason
-  errors:
-    messages:
-      invalid_json: Invalid JSON
-  layouts:
-    decidim:
-      admin:
-        global_moderations:
-          title: Global moderations
+          last_day: Posljednji dan
+          last_month: Posljednji mjesec
+          last_week: Posljednje tjedne
