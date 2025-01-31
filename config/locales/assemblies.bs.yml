@@ -1,0 +1,47 @@
+---
+bs:
+  decidim:
+    admin:
+      actions:
+        new_assembly_type: Novi tip skupštine
+      assemblies_types:
+        create:
+          error: Došlo je do problema pri stvaranju novog tipa skupštine.
+          success: Tip skupštine uspješno stvoren.
+        destroy:
+          success: Tip skupštine uspješno obrisan.
+        new:
+          title: Novi tip skupštine
+        update:
+          error: Došlo je do problema pri ažuriranju ovog tipa skupštine.
+          success: Tip skupštine uspješno ažuriran.
+      menu:
+        assemblies_types: Tipovi skupština
+      models:
+        assembly_user_role:
+          roles:
+            valuator: Ocjenjivač
+      titles:
+        assemblies_types: Tipovi skupština
+    admin_log:
+      assembly_type:
+        create: "%{user_name} je stvorio tip skupštine %{resource_name}"
+        publish: "%{user_name} je objavio tip skupštine %{resource_name}"
+        unpublish: "%{user_name} je odustao od objavljivanja tipa skupštine %{resource_name}"
+        update: "%{user_name} je ažurirao tip skupštine %{resource_name}"
+    events:
+      assemblies:
+        create_assembly_member:
+          email_intro: Administrator skupštine <a href="%{resource_url}">%{resource_name}</a> vas je dodao u tu skupštinu.
+          email_subject: Poziv da postanete član skupštine %{resource_name}!
+          notification_title: Registrovani ste kao član Skupštine <a href="%{resource_path}">%{resource_name}</a>. Pogledajte <a href="%{resource_path}">stranicu skupštine</a> da biste doprineli njenom radu!
+      assembly:
+        role_assigned:
+          email_intro: Imenovani ste na funkciju %{role} skupštine %{resource_title}.
+          email_outro: Dobili ste ovo obavještenje zbog toga što ste %{role} skupštine %{resource_title}.
+          email_subject: Imenovani ste na funkciju %{role} %{resource_title}.
+          notification_title: Imenovani ste na funkciju %{role} skupštine <a href="%{resource_url}">%{resource_title}</a>.
+    log:
+      value_types:
+        assembly_type_presenter:
+          not_found: 'Ovaj tip skupštine nije pronađen u bazi podataka (ID: %{id})'

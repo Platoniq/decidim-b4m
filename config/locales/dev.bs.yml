@@ -1,0 +1,9 @@
+---
+bs:
+  decidim:
+    components:
+      dummy:
+        settings:
+          step:
+            endorsements_blocked: Podrške su onemogućene
+            endorsements_enabled: Podrške su omogućene

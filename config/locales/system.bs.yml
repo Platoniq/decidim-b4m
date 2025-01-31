@@ -1,0 +1,164 @@
+---
+bs:
+  activemodel:
+    attributes:
+      oauth_application:
+        name: OAuth app ime
+        organization_logo: Logo organizacije (kvadrat)
+        organization_name: Organizacija
+        organization_url: Web stranica organizacije
+        redirect_uri: URI za preusmjeravanje
+      organization:
+        address: SMTP host ime
+        from_email: Od (e-mail adresa)
+        from_label: Od (ime)
+        password: Lozinka
+        port: Port
+        user_name: Korisničko ime
+      organization_file_uploads:
+        allowed_content_types:
+          admin: Admin MIME tipovi
+          default: Zadani MIME tipovi
+        allowed_file_extensions:
+          admin: Admin ekstenzije datoteka
+          default: Zadane ekstenzije datoteka
+          image: Ekstenzije slika
+        maximum_file_size:
+          avatar: Veličina avatar datoteke
+          default: Standardna veličina datoteke
+    errors:
+      models:
+        oauth_application:
+          attributes:
+            redirect_uri:
+              must_be_ssl: URI za preusmjeravanje mora biti SSL URI
+  decidim:
+    system:
+      actions:
+        confirm_destroy: Želite li obrisati ovo?
+        destroy: Obriši
+        edit: Uredi
+        save: Sačuvaj
+        title: Akcije
+      admins:
+        create:
+          error: Nije moguće kreirati novog administratora.
+        edit:
+          title: Uredi administratora
+          update: Ažuriraj
+        index:
+          title: Administratori
+        new:
+          create: Kreiraj
+          title: Novi administrator
+        update:
+          error: Nije moguće ažurirati administratora.
+      dashboard:
+        show:
+          current_organizations: Trenutne organizacije
+      default_pages:
+        placeholders:
+          content: Dodajte relevantni sadržaj na staticnoj stranici %{page} na administratorskoj ploči.
+          title: Zadani naslov za %{page}
+      menu:
+        admins: Administratori
+        dashboard: Administratorska ploča
+        oauth_applications: OAuth aplikacije
+        organizations: Organizacije
+      models:
+        admin:
+          fields:
+            created_at: Kreirano
+            email: E-mail
+          validations:
+            email_uniqueness: već postoji administrator sa istom e-mail adresom
+        oauth_application:
+          fields:
+            created_at: Kreirano
+            name: OAuth app ime
+            organization_name: Organizacija
+        organization:
+          actions:
+            save_and_invite: Kreiraj organizaciju i pozovi administratora
+          fields:
+            created_at: Kreirano
+            file_upload_settings: Postavke za učitavanje datoteka
+            name: Ime
+            omniauth_settings: Postavke Omniauth-a
+            smtp_settings: SMTP postavke
+      oauth_applications:
+        create:
+          error: Nije moguće kreirati aplikaciju.
+          success: Aplikacija je kreirana.
+        destroy:
+          error: Nije moguće obrisati aplikaciju.
+          success: Aplikacija je obrisana.
+        edit:
+          save: Sačuvaj
+          title: Uredi aplikaciju
+        form:
+          select_organization: Odaberite organizaciju
+        index:
+          confirm_delete: Želite li obrisati aplikaciju?
+          title: OAuth aplikacije
+        new:
+          save: Sačuvaj
+          title: Nova aplikacija
+        update:
+          error: Nije moguće ažurirati aplikaciju.
+          success: Aplikacija je ažurirana.
+      organizations:
+        advanced_settings:
+          hide: Sakrij napredne postavke
+          show: Prikaži napredne postavke
+        create:
+          error: Nije moguće kreirati novu organizaciju.
+        edit:
+          secondary_hosts_hint: Unesite svaki na novi red
+        file_upload_settings:
+          content_types:
+            title: Dozvoljeni MIME tipovi
+          file_extensions:
+            title: Dozvoljene ekstenzije datoteka
+          file_sizes:
+            title: Maksimalne veličine datoteka
+        index:
+          title: Organizacije
+        new:
+          title: Nova organizacija
+        omniauth_settings:
+          decidim:
+            client_id: ID klijenta
+            client_secret: Tajni ključ klijenta
+            site_url: URL web stranice
+          enabled: Omogućeno
+          enabled_by_default: Ovaj pružatelj je omogućen po zadanim postavkama. Može se uređivati ali ne i onemogućavati.
+          facebook:
+            app_id: ID aplikacije
+            app_secret: Tajna aplikacije
+          google_oauth2:
+            client_id: ID klijenta
+            client_secret: Tajni ključ klijenta
+          icon: Ikona
+          icon_path: Putanja do ikone
+          twitter:
+            api_key: API ključ
+            api_secret: API tajna
+        smtp_settings:
+          fieldsets:
+            sender: Pošiljalac
+          placeholder:
+            from_email: your-organization@example.org
+            from_label: ime-vaše-organizacije
+        update:
+          error: Nije moguće ažurirati organizaciju.
+          success: Organizacija je ažurirana.
+        users_registration_mode:
+          disabled: Pristup je moguć samo putem eksternih naloga
+          enabled: Omogući učesnicima da se registruju i prijave
+      shared:
+        notices:
+          no_organization_warning_html: Počnite tako što ćete kreirati organizaciju. Pročitajte %{guide} prije nego što nastavite.
+          our_getting_started_guide: naš vodič za početak
+      titles:
+        dashboard: Administratorska ploča

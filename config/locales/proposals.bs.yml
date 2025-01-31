@@ -1,0 +1,103 @@
+---
+bs:
+  activemodel:
+    attributes:
+      valuation_assignment:
+        admin_log:
+          valuator_role_id: Ime ocjenjivača
+    errors:
+      models:
+        proposal:
+          attributes:
+            body:
+              cant_be_equal_to_template: ne može biti jednak šablonu
+    models:
+      decidim/proposals/admin/update_proposal_scope_event: Prijedlog opsega izmijenjen
+  decidim:
+    admin:
+      filters:
+        proposals:
+          valuator_role_ids_has:
+            label: Dodeljeno ocjenjivaču
+        search_placeholder:
+          id_string_or_title_cont: Pretraži %{collection} prema identifikacionom broju ili nazivu.
+    components:
+      proposals:
+        settings:
+          global:
+            new_proposal_body_template: Novi prijedlog šablona glavnog teksta
+            new_proposal_body_template_help: Možete definirati tekst koji će se pojavljivati pri kreiranju novog prijedloga
+          step:
+            amendments_visibility: Vidljivost izmjena
+            amendments_visibility_choices:
+              all: Izmjene su vidljive svima
+              participants: Izmjene su vidljive samo svojim autorima
+            answers_with_costs: Omogući troškove za odgovore na prijedloge
+            publish_answers_immediately: Objavi odgovore na prijedloge odmah
+    events:
+      proposals:
+        admin:
+          proposal_note_created:
+            email_outro: Dobili ste ovo obavještenje jer možete ocijeniti prijedlog.
+            email_subject: Neko je ostavio poruku na prijedlogu %{resource_title}.
+        proposal_mentioned:
+          email_intro: Vaš prijedlog %{mentioned_proposal_title} je bio pomenut <a href="%{resource_url}">ovdje</a> u komentarima.
+        proposal_update_scope:
+          email_intro: 'Administrator je ažurirao opseg vašeg prijedloga "%{resource_title}", pogledajte na ovoj stranici:'
+          email_subject: Opseg prijedloga %{resource_title} je ažuriran
+          notification_title: Opseg prijedloga <a href="%{resource_path}">%{resource_title}</a> je ažuriran od strane administratora.
+    proposals:
+      actions:
+        answer_proposal: Odgovor na prijedlog
+        show: Prikaži prijedlog
+      admin:
+        proposals:
+          index:
+            assign_to_valuator: Dodeli ocjenjivaču
+            assign_to_valuator_button: Dodeli
+            change_scope: Promijeni opseg
+            publish_answers: Objavi odgovore
+            unassign_from_valuator: Oduzmi od ocjenjivača
+            unassign_from_valuator_button: Od dodeli
+            update_scope_button: Ažuriraj opseg
+          show:
+            amendments_count: Broj izmjena
+            assigned_valuators: Dodeljeni ocjenjivači
+            comments_count: Broj komentara
+            documents: Dokumenti
+            endorsements_count: Broj podršaka
+            endorsers: Podržavaoci
+            n_more_endorsers:
+              one: i još 1
+              few: i još %{count}
+              other: i još %{count}
+            photos: Slike
+            ranking: "%{ranking} od %{total}"
+            related_meetings: Slični sastanci
+            remove_assignment: Ukloni zadatak
+            remove_assignment_confirmation: Da li ste sigurni da želite ukloniti ocjenjivača sa ovog prijedloga?
+            valuators: Ocjenjivači
+          update_category:
+            invalid: 'Ovi prijedlozi već imaju %{subject_name} kategoriju: %{proposals}.'
+            success: 'Prijedlozi uspješno dodani u kategoriju %{subject_name}: %{proposals}.'
+          update_scope:
+            invalid: 'Ovi prijedlozi već imaju %{subject_name} opseg: %{proposals}.'
+            success: 'Prijedlozi kojima je uspješno dodat opseg %{subject_name}: %{proposals}.'
+      admin_log:
+        proposal:
+          publish_answer: "%{user_name} je objavio odgovor na prijedlog %{resource_name} u prostoru %{space_name}"
+        valuation_assignment:
+          create: "%{user_name} je dodao prijedlog %{resource_name} ocjenjivaču"
+      models:
+        proposal:
+          fields:
+            published_answer: Objavljeni odgovor
+            valuator: Ocjenjivač
+            valuators: Ocjenjivači
+      proposals:
+        show:
+          estimated_cost: Procijenjeni trošak
+      proposals_picker:
+        choose_proposals: Izaberi prijedloge
+      publish_answers:
+        success: Odgovori na prijedloge uspješno objavljeni.

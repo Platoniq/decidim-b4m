@@ -44,6 +44,7 @@ jobs:
           DATABASE_PASSWORD: postgres
       - name: Precompile assets
         run: |
+          sudo apt-get install imagemagick
           npm install
           bundle exec rake assets:precompile
         env:
