@@ -10,6 +10,7 @@ gem "decidim", DECIDIM_VERSION
 
 gem "decidim-decidim_awesome"
 gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
+gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "main"
 
 gem "faraday", "~> 2.9.0"

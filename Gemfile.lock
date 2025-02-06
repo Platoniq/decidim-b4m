@@ -8,6 +8,14 @@ GIT
       decidim-core (>= 0.28.0, < 0.29)
 
 GIT
+  remote: https://github.com/Platoniq/decidim-superspace
+  revision: 2e0f59da545189647b1386b5ae3a9ed6c3dcec0f
+  branch: main
+  specs:
+    decidim-superspaces (0.1.0)
+      decidim-core (>= 0.28.0, < 0.29)
+
+GIT
   remote: https://github.com/mainio/decidim-module-term_customizer
   revision: 9133eea57ebfc4164b640efd1ac6b9ca1628c793
   branch: main
@@ -899,9 +907,10 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq
   decidim (= 0.28.2)
-  decidim-decidim_awesome!
+  decidim-decidim_awesome
   decidim-dev (= 0.28.2)
   decidim-social_crowdfunding!
+  decidim-superspaces!
   decidim-term_customizer!
   faraday (~> 2.9.0)
   figaro (~> 1.2)
