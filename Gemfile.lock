@@ -837,7 +837,7 @@ GEM
     sshkit-interactive (0.3.0)
       sshkit (~> 1.12)
     ssrf_filter (1.1.2)
-    stringio (3.1.1)
+    stringio (3.1.2)
     strscan (3.1.0)
     temple (0.10.3)
     terminal-table (3.0.2)
