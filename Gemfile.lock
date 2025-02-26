@@ -247,6 +247,10 @@ GEM
     decidim-comments (0.28.5)
       decidim-core (= 0.28.5)
       redcarpet (~> 3.5, >= 3.5.1)
+    decidim-conferences (0.28.5)
+      decidim-core (= 0.28.5)
+      decidim-meetings (= 0.28.5)
+      wicked_pdf (~> 2.7)
     decidim-core (0.28.5)
       active_link_to (~> 1.0)
       acts_as_list (~> 1.0)
@@ -919,6 +923,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq
   decidim (= 0.28.5)
+  decidim-conferences (= 0.28.5)
   decidim-decidim_awesome
   decidim-dev (= 0.28.5)
   decidim-social_crowdfunding!
