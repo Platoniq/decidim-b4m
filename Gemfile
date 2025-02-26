@@ -2,15 +2,17 @@
 
 source "https://rubygems.org"
 
-DECIDIM_VERSION = "0.28.2"
+DECIDIM_VERSION = "0.28.5"
 
 ruby RUBY_VERSION
 
 gem "decidim", DECIDIM_VERSION
 
+gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-decidim_awesome"
 gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
 gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
+gem "decidim-templates"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "main"
 
 gem "faraday", "~> 2.9.0"
@@ -35,8 +37,6 @@ end
 group :development do
   gem "letter_opener_web", "~> 2.0"
   gem "listen", "~> 3.1"
-  gem "spring", "~> 2.0"
-  gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 4.2"
 
   gem "capistrano", "~> 3.18"

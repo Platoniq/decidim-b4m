@@ -17,14 +17,14 @@ checksums = [
     package: "decidim-accountability",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "f9c74b2e988d50ebab03466c2f0b2c96"
+      "/config/locales/sr-CS.yml" => "152ffcbd90d65823d14632625d493518"
     }
   },
   {
     package: "decidim-admin",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "fffe5350d8a3bbb597be20711f20fe10"
+      "/config/locales/sr-CS.yml" => "bc39ff97cc035e2d27a54fe702c558d5"
     }
   },
   {
