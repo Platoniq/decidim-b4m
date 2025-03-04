@@ -1661,6 +1661,7 @@ ActiveRecord::Schema.define(version: 2025_02_26_093428) do
     t.string "locale"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "description"
     t.index ["decidim_organization_id"], name: "index_decidim_superspaces_superspaces_on_decidim_organization"
   end
 
