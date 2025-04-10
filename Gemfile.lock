@@ -17,6 +17,32 @@ GIT
       decidim-core (>= 0.28.0, < 0.29)
 
 GIT
+  remote: https://github.com/decidim/decidim.git
+  revision: 396a90750fbafc9ef527deb18b787f5eceaeef35
+  branch: release/0.28-stable
+  specs:
+    decidim (0.28.5)
+      decidim-accountability (= 0.28.5)
+      decidim-admin (= 0.28.5)
+      decidim-api (= 0.28.5)
+      decidim-assemblies (= 0.28.5)
+      decidim-blogs (= 0.28.5)
+      decidim-budgets (= 0.28.5)
+      decidim-comments (= 0.28.5)
+      decidim-core (= 0.28.5)
+      decidim-debates (= 0.28.5)
+      decidim-forms (= 0.28.5)
+      decidim-generators (= 0.28.5)
+      decidim-meetings (= 0.28.5)
+      decidim-pages (= 0.28.5)
+      decidim-participatory_processes (= 0.28.5)
+      decidim-proposals (= 0.28.5)
+      decidim-sortitions (= 0.28.5)
+      decidim-surveys (= 0.28.5)
+      decidim-system (= 0.28.5)
+      decidim-verifications (= 0.28.5)
+
+GIT
   remote: https://github.com/mainio/decidim-module-term_customizer
   revision: 9133eea57ebfc4164b640efd1ac6b9ca1628c793
   branch: main
@@ -201,26 +227,6 @@ GEM
     date_validator (0.12.0)
       activemodel (>= 3)
       activesupport (>= 3)
-    decidim (0.28.5)
-      decidim-accountability (= 0.28.5)
-      decidim-admin (= 0.28.5)
-      decidim-api (= 0.28.5)
-      decidim-assemblies (= 0.28.5)
-      decidim-blogs (= 0.28.5)
-      decidim-budgets (= 0.28.5)
-      decidim-comments (= 0.28.5)
-      decidim-core (= 0.28.5)
-      decidim-debates (= 0.28.5)
-      decidim-forms (= 0.28.5)
-      decidim-generators (= 0.28.5)
-      decidim-meetings (= 0.28.5)
-      decidim-pages (= 0.28.5)
-      decidim-participatory_processes (= 0.28.5)
-      decidim-proposals (= 0.28.5)
-      decidim-sortitions (= 0.28.5)
-      decidim-surveys (= 0.28.5)
-      decidim-system (= 0.28.5)
-      decidim-verifications (= 0.28.5)
     decidim-accountability (0.28.5)
       decidim-comments (= 0.28.5)
       decidim-core (= 0.28.5)
@@ -923,7 +929,7 @@ DEPENDENCIES
   capistrano-rails-console
   capistrano-rbenv
   capistrano-sidekiq
-  decidim (= 0.28.5)
+  decidim!
   decidim-conferences (= 0.28.5)
   decidim-decidim_awesome
   decidim-dev (= 0.28.5)
