@@ -2,17 +2,16 @@
 
 source "https://rubygems.org"
 
-DECIDIM_VERSION = "0.28.5"
-
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "release/0.28-stable"
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim.git", branch: "release/0.28-stable" }.freeze
 
+gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem "decidim-decidim_awesome"
-gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
-gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
-gem "decidim-templates"
+gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "release/0.28-stable"
+gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "release/0.28-stable"
+gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "release/0.28-stable"
+gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "main"
 
 gem "faraday", "~> 2.9.0"
