@@ -101,7 +101,7 @@ checksums = [
     package: "decidim-proposals",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "d12fe643ef8bf1c81609fba40e95dad5"
+      "/config/locales/sr-CS.yml" => "210b21828a9fda728c1cdf9f1031adbc"
     }
   },
   {
