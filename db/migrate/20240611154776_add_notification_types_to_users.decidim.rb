@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim (originally 20181214101250)
 
+# This migration comes from decidim (originally 20181214101250)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-09-12 12:24:09 UTC
 class AddNotificationTypesToUsers < ActiveRecord::Migration[5.2]
   class UserBaseEntity < ApplicationRecord
     self.table_name = :decidim_users

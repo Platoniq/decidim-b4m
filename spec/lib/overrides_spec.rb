@@ -17,21 +17,21 @@ checksums = [
     package: "decidim-accountability",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "214a28ca471687de5394bb36e01fd7ef"
+      "/config/locales/sr-CS.yml" => "6810d2d7423500254719f2989d99209f"
     }
   },
   {
     package: "decidim-admin",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "0286a7fe1fce0acf6a7a460274a5b027"
+      "/config/locales/sr-CS.yml" => "e6ea45b57437d2b715323488b2465860"
     }
   },
   {
     package: "decidim-assemblies",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "9458919e748b6cb29f5c814741f76c81"
+      "/config/locales/sr-CS.yml" => "d86eb77c20d63de57c080c2066a7b702"
     }
   },
   {
@@ -101,7 +101,7 @@ checksums = [
     package: "decidim-proposals",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "210b21828a9fda728c1cdf9f1031adbc"
+      "/config/locales/sr-CS.yml" => "d6a38f5fd37ddd6395310b8ac220d0ea"
     }
   },
   {
