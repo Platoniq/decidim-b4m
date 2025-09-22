@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-social_crowdfunding
   revision: 13e86c045c907a0292dc33a83009ef6b2370688d
-  branch: main
+  branch: release/0.29-stable
   specs:
     decidim-social_crowdfunding (0.4.0)
       decidim-admin (>= 0.29.0, < 0.30)
@@ -10,7 +10,7 @@ GIT
 GIT
   remote: https://github.com/Platoniq/decidim-module-term_customizer
   revision: 3da4973f52649534fa9cc2acaaa4d89176a19351
-  branch: master
+  branch: release/0.29-stable
   specs:
     decidim-term_customizer (0.29.0)
       decidim-admin (~> 0.29.0)
@@ -18,25 +18,13 @@ GIT
 
 GIT
   remote: https://github.com/Platoniq/decidim-superspace
-  revision: e40b3fd95a97eadbb9e668a6abc4d1afc7b22cc1
-  branch: main
+  revision: 35e487492b1cfe579a82334a1c669fb11079e848
+  branch: release/0.29-stable
   specs:
     decidim-superspaces (0.2.0)
       decidim-conferences (>= 0.29.0, < 0.30)
       decidim-core (>= 0.29.0, < 0.30)
       deface (~> 1.9)
-
-GIT
-  remote: https://github.com/decidim-ice/decidim-module-decidim_awesome
-  revision: 72989770a81d5c1f03ddbe6f9d459a6bfdd6b922
-  branch: main
-  specs:
-    decidim-decidim_awesome (0.12.3)
-      active_hashcash (~> 0.4.0)
-      decidim-admin (>= 0.29.1, < 0.30)
-      decidim-core (>= 0.29.1, < 0.30)
-      deface (>= 1.5)
-      sassc (~> 2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -323,6 +311,12 @@ GEM
     decidim-debates (0.29.4)
       decidim-comments (= 0.29.4)
       decidim-core (= 0.29.4)
+    decidim-decidim_awesome (0.12.4)
+      active_hashcash (~> 0.4.0)
+      decidim-admin (>= 0.29.1, < 0.30)
+      decidim-core (>= 0.29.1, < 0.30)
+      deface (>= 1.5)
+      sassc (~> 2.3)
     decidim-dev (0.29.4)
       bullet (~> 7.1.6)
       byebug (~> 11.0)
@@ -977,7 +971,7 @@ DEPENDENCIES
   capistrano-sidekiq
   decidim (= 0.29.4)
   decidim-conferences (= 0.29.4)
-  decidim-decidim_awesome!
+  decidim-decidim_awesome (= 0.12.4)
   decidim-dev (= 0.29.4)
   decidim-social_crowdfunding!
   decidim-superspaces!

@@ -8,11 +8,11 @@ DECIDIM_VERSION = "0.29.4"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "main"
-gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
-gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
+gem "decidim-decidim_awesome", "0.12.4"
+gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "release/0.29-stable"
+gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "release/0.29-stable"
 gem "decidim-templates", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "master"
+gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "release/0.29-stable"
 
 gem "faraday", "~> 2.9.0"
 
