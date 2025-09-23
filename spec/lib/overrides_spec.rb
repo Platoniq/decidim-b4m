@@ -10,14 +10,14 @@ checksums = [
     package: "decidim-core",
     files: {
       # views
-      "/app/views/layouts/decidim/footer/_mini.html.erb" => "ccead2f5f20557ea4db1501de943f82b"
+      "/app/views/layouts/decidim/footer/_mini.html.erb" => "c67cc97db27cdcf926f60682e399f688"
     }
   },
   {
     package: "decidim-accountability",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "6810d2d7423500254719f2989d99209f"
+      "/config/locales/sr-CS.yml" => "ad7620ebcf13e68bfcbe59b4693ac4e0"
     }
   },
   {
