@@ -67,10 +67,6 @@ bs:
             documents: Dokumenti
             endorsements_count: Broj podršaka
             endorsers: Podržavaoci
-            n_more_endorsers:
-              one: i još 1
-              few: i još %{count}
-              other: i još %{count}
             photos: Slike
             ranking: "%{ranking} od %{total}"
             related_meetings: Slični sastanci

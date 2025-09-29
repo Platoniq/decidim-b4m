@@ -2,19 +2,6 @@
 bs:
   decidim:
     admin:
-      actions:
-        new_assembly_type: Novi tip skupštine
-      assemblies_types:
-        create:
-          error: Došlo je do problema pri stvaranju novog tipa skupštine.
-          success: Tip skupštine uspješno stvoren.
-        destroy:
-          success: Tip skupštine uspješno obrisan.
-        new:
-          title: Novi tip skupštine
-        update:
-          error: Došlo je do problema pri ažuriranju ovog tipa skupštine.
-          success: Tip skupštine uspješno ažuriran.
       menu:
         assemblies_types: Tipovi skupština
       models:

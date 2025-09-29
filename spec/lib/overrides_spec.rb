@@ -10,28 +10,28 @@ checksums = [
     package: "decidim-core",
     files: {
       # views
-      "/app/views/layouts/decidim/footer/_mini.html.erb" => "ccead2f5f20557ea4db1501de943f82b"
+      "/app/views/layouts/decidim/footer/_mini.html.erb" => "c67cc97db27cdcf926f60682e399f688"
     }
   },
   {
     package: "decidim-accountability",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "214a28ca471687de5394bb36e01fd7ef"
+      "/config/locales/sr-CS.yml" => "ad7620ebcf13e68bfcbe59b4693ac4e0"
     }
   },
   {
     package: "decidim-admin",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "0286a7fe1fce0acf6a7a460274a5b027"
+      "/config/locales/sr-CS.yml" => "e6ea45b57437d2b715323488b2465860"
     }
   },
   {
     package: "decidim-assemblies",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "9458919e748b6cb29f5c814741f76c81"
+      "/config/locales/sr-CS.yml" => "d86eb77c20d63de57c080c2066a7b702"
     }
   },
   {
@@ -101,7 +101,7 @@ checksums = [
     package: "decidim-proposals",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "210b21828a9fda728c1cdf9f1031adbc"
+      "/config/locales/sr-CS.yml" => "3571d03a9106bb98e160e2e1a7b54ca6"
     }
   },
   {

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
-# This migration comes from decidim_proposals (originally 20170307085300)
 
+# This migration comes from decidim_proposals (originally 20170307085300)
+# This file has been modified by `decidim upgrade:migrations` task on 2025-09-12 12:24:10 UTC
 class MigrateProposalReportsDataToReports < ActiveRecord::Migration[5.0]
   class Decidim::Proposals::ProposalReport < ApplicationRecord
     belongs_to :user, foreign_key: "decidim_user_id", class_name: "Decidim::User"
