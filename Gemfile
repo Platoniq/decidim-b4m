@@ -14,6 +14,8 @@ gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "main"
 
+gem "appsignal"
+
 gem "faraday", "~> 2.9.0"
 
 gem "bootsnap", "~> 1.3"
