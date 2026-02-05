@@ -13,6 +13,7 @@ gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-mod
 gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "main"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/Platoniq/decidim-module-term_customizer", branch: "main"
+gem "omniauth-decidim"
 
 gem "appsignal"
 
