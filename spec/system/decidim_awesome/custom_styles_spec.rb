@@ -110,10 +110,10 @@ describe "Custom styles" do
           visit decidim.new_user_session_path
           fill_in "Email", with: user.email
           fill_in "Password", with: password
-          
+
           # In some test setups, the cookie banner might block clicks.
           # We attempt to accept it if present, just in case.
-          find("#dc-dialog-accept").click if has_css?("#dc-dialog-accept")
+          find_by_id("dc-dialog-accept").click if has_css?("#dc-dialog-accept")
 
           within "form.new_user" do
             find("*[type=submit]").click

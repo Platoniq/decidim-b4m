@@ -4,9 +4,9 @@ Decidim.configure do |config|
   config.omniauth_providers = {
     decidim: {
       enabled: true,
-      client_id:  ENV["DECIDIM_CLIENT_ID"],
-      client_secret: ENV["DECIDIM_CLIENT_SECRET"],
-      site_url: ENV["DECIDIM_SITE_URL"]
+      client_id: ENV.fetch("DECIDIM_CLIENT_ID", nil),
+      client_secret: ENV.fetch("DECIDIM_CLIENT_SECRET", nil),
+      site_url: ENV.fetch("DECIDIM_SITE_URL", nil)
     },
     facebook: {
       enabled: false
