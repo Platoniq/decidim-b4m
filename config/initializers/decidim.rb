@@ -83,10 +83,10 @@ if Decidim.module_installed? :proposals
 end
 
 # Icons and Assets
-Decidim.icons.register(name: "arrow-bottom", icon: "arrow-bottom", category: "system", engine: :core)
-Decidim.icons.register(name: "audio", icon: "audio", category: "system", engine: :core)
-Decidim.icons.register(name: "link-intact", icon: "link-intact", category: "system", engine: :core)
-Decidim.icons.register(name: "decidim-fill", icon: "decidim-fill", category: "system", engine: :core)
+Decidim.icons.register(name: "arrow-bottom", icon: "arrow-bottom", category: "system", engine: :core, description: "Arrow pointing down")
+Decidim.icons.register(name: "audio", icon: "audio", category: "system", engine: :core, description: "Audio file or player")
+Decidim.icons.register(name: "link-intact", icon: "link-intact", category: "system", engine: :core, description: "External link")
+Decidim.icons.register(name: "decidim-fill", icon: "decidim-fill", category: "system", engine: :core, description: "Decidim logo")
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
