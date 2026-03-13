@@ -10,7 +10,7 @@ Decidim.configure do |config|
   config.default_locale = ENV.fetch("DECIDIM_DEFAULT_LOCALE", "en").to_sym
 
   # Security & Networking
-  config.system_accesslist_ips = ENV.fetch("DECIDIM_SYSTEM_ACCESS_IPS", "").split(",").map(&:strip).presence
+  config.system_accesslist_ips = ENV.fetch("DECIDIM_SYSTEM_ACCESS_IPS", "").split(",").map(&:strip)
   config.force_ssl = ENV.fetch("DECIDIM_FORCE_SSL", "true") == "true"
   config.cors_enabled = ENV.fetch("DECIDIM_CORS_ENABLED", "false") == "true"
 
@@ -83,10 +83,10 @@ if Decidim.module_installed? :proposals
 end
 
 # Icons and Assets
-Decidim.icons.register(name: "arrow-bottom", icon: "arrow-bottom", category: "system", engine: :core, description: "Arrow pointing down")
-Decidim.icons.register(name: "audio", icon: "audio", category: "system", engine: :core, description: "Audio file or player")
-Decidim.icons.register(name: "link-intact", icon: "link-intact", category: "system", engine: :core, description: "External link")
-Decidim.icons.register(name: "decidim-fill", icon: "decidim-fill", category: "system", engine: :core, description: "Decidim logo")
+Decidim.icons.register(name: "arrow-bottom", icon: "arrow-bottom", category: "system", engine: :core, description: "Directional arrow pointing down")
+Decidim.icons.register(name: "audio", icon: "audio", category: "system", engine: :core, description: "Audio content icon")
+Decidim.icons.register(name: "link-intact", icon: "link-intact", category: "system", engine: :core, description: "Hyperlink icon")
+Decidim.icons.register(name: "decidim-fill", icon: "decidim-fill", category: "system", engine: :core, description: "Decidim brand logo")
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
