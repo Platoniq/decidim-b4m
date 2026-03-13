@@ -13,7 +13,7 @@ Decidim.configure do |config|
   config.system_accesslist_ips = ENV.fetch("DECIDIM_SYSTEM_ACCESS_IPS", "").split(",").map(&:strip).presence
   config.force_ssl = ENV.fetch("DECIDIM_FORCE_SSL", "true") == "true"
   config.cors_enabled = ENV.fetch("DECIDIM_CORS_ENABLED", "false") == "true"
-  
+
   # Assets & UI
   config.service_worker_enabled = ENV.fetch("DECIDIM_SERVICE_WORKER_ENABLED", "false") == "true"
   config.page_blocks = ENV.fetch("DECIDIM_PAGE_BLOCKS", "terms-of-service").split(",").map(&:strip)
@@ -36,9 +36,9 @@ Decidim.configure do |config|
           attribution: ENV.fetch("MAPS_ATTRIBUTION", nil)
         }.compact
       },
-      geocoding: { 
-        host: ENV.fetch("MAPS_GEOCODING_HOST", nil), 
-        use_https: true 
+      geocoding: {
+        host: ENV.fetch("MAPS_GEOCODING_HOST", nil),
+        use_https: true
       }.compact
     }
   end
@@ -81,6 +81,12 @@ if Decidim.module_installed? :proposals
     config.participatory_space_highlighted_proposals_limit = ENV.fetch("DECIDIM_PROPOSALS_LIMIT", "4").to_i
   end
 end
+
+# Icons and Assets
+Decidim.icons.register(name: "arrow-bottom", icon: "arrow-bottom", category: "system", engine: :core)
+Decidim.icons.register(name: "audio", icon: "audio", category: "system", engine: :core)
+Decidim.icons.register(name: "link-intact", icon: "link-intact", category: "system", engine: :core)
+Decidim.icons.register(name: "decidim-fill", icon: "decidim-fill", category: "system", engine: :core)
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales
 Rails.application.config.i18n.default_locale = Decidim.default_locale
