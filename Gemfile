@@ -26,6 +26,8 @@ gem "puma", ">= 6.3.1"
 
 gem "wicked_pdf", "~> 2.1"
 
+gem "aws-sdk-core", "3.214.1"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
