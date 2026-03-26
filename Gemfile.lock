@@ -1116,6 +1116,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  appsignal
   aws-sdk-core (= 3.214.1)
   aws-sdk-s3
   bootsnap (~> 1.3)
