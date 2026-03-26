@@ -18,6 +18,8 @@ gem "decidim-term_customizer", git: "https://github.com/openpoke/decidim-module-
 
 gem "omniauth-decidim"
 
+gem "appsignal"
+
 gem "faraday", "~> 2.9.0"
 
 gem "bootsnap", "~> 1.3"
