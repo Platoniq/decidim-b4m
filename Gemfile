@@ -21,6 +21,7 @@ gem "faraday", "~> 2.9.0"
 gem "bootsnap", "~> 1.3"
 
 gem "puma", ">= 6.3.1"
+gem "rack-attack", "~> 6.7"
 
 gem "wicked_pdf", "~> 2.1"
 
