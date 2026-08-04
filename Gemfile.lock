@@ -1053,6 +1053,7 @@ DEPENDENCIES
   net-smtp (~> 0.5.0)
   passenger (~> 6.0)
   puma (>= 6.3.1)
+  rack-attack (~> 6.7)
   sidekiq
   web-console (~> 4.2)
   wicked_pdf (~> 2.1)
