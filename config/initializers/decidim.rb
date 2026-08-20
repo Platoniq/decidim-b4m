@@ -431,8 +431,6 @@ if Decidim.module_installed? :meetings
   end
 end
 
-
-
 if Decidim.module_installed? :initiatives
   Decidim::Initiatives.configure do |config|
     unless Rails.application.secrets.dig(:decidim, :initiatives, :creation_enabled) == "auto"
