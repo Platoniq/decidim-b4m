@@ -1145,6 +1145,7 @@ DEPENDENCIES
   decidim-conferences (= 0.31.4)
   decidim-decidim_awesome!
   decidim-dev (= 0.31.4)
+  decidim-initiatives (= 0.31.4)
   decidim-social_crowdfunding!
   decidim-superspaces!
   decidim-templates (= 0.31.4)
