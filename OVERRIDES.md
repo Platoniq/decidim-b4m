@@ -20,19 +20,19 @@ Translation files carried locally. Usually re-sync from upstream and keep the lo
 
 | package | file | recorded checksum |
 |---|---|---|
-| `decidim-accountability` | `/config/locales/sr-CS.yml` | `ad7620eb…` |
-| `decidim-admin` | `/config/locales/sr-CS.yml` | `e6ea45b5…` |
-| `decidim-assemblies` | `/config/locales/sr-CS.yml` | `d86eb77c…` |
-| `decidim-blogs` | `/config/locales/sr-CS.yml` | `bc15738f…` |
+| `decidim-accountability` | `/config/locales/sr-CS.yml` | `84747bbb…` |
+| `decidim-admin` | `/config/locales/sr-CS.yml` | `98918b97…` |
+| `decidim-assemblies` | `/config/locales/sr-CS.yml` | `db86c7d2…` |
+| `decidim-blogs` | `/config/locales/sr-CS.yml` | `4648c80b…` |
 | `decidim-budgets` | `/config/locales/sr-CS.yml` | `67da89fa…` |
-| `decidim-comments` | `/config/locales/sr-CS.yml` | `8b1b3a8e…` |
-| `decidim-core` | `/config/locales/sr-CS.yml` | `0252f989…` |
+| `decidim-comments` | `/config/locales/sr-CS.yml` | `989ae03d…` |
+| `decidim-core` | `/config/locales/sr-CS.yml` | `de5d95a0…` |
 | `decidim-debates` | `/config/locales/sr-CS.yml` | `4648c80b…` |
-| `decidim-dev` | `/config/locales/sr-CS.yml` | `757e7a8c…` |
+| `decidim-dev` | `/config/locales/sr-CS.yml` | `4648c80b…` |
 | `decidim-forms` | `/config/locales/sr-CS.yml` | `4648c80b…` |
 | `decidim-meetings` | `/config/locales/sr-CS.yml` | `6aba80d1…` |
 | `decidim-pages` | `/config/locales/sr-CS.yml` | `4648c80b…` |
-| `decidim-proposals` | `/config/locales/sr-CS.yml` | `3571d03a…` |
+| `decidim-proposals` | `/config/locales/sr-CS.yml` | `a1dc178e…` |
 | `decidim-sortitions` | `/config/locales/sr-CS.yml` | `4648c80b…` |
 | `decidim-surveys` | `/config/locales/sr-CS.yml` | `4648c80b…` |
 | `decidim-system` | `/config/locales/sr-CS.yml` | `1455fe8c…` |
