@@ -1,6 +1,6 @@
 # decidim-b4m — gem overrides
 
-_Generated 2026-08-20. Currently on Decidim **0.30.2**._
+_Generated 2026-08-20. Currently on Decidim **0.31.4**._
 
 This app patches files that live inside the decidim gems. `spec/lib/overrides_spec.rb` stores an MD5 of each upstream original, so the suite fails the moment upstream changes one — that is the signal that a local copy has drifted from the version it was forked from.
 
