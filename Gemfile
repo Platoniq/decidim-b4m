@@ -10,10 +10,13 @@ gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "release/0.31-stable"
 gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-meetings", DECIDIM_VERSION
 gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "deps/decidim-0.31"
 gem "decidim-superspaces", git: "https://github.com/Platoniq/decidim-superspace", branch: "deps/decidim-0.31"
 gem "decidim-templates", DECIDIM_VERSION
 gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.31-stable"
+
+gem "omniauth-decidim"
 
 gem "appsignal"
 
@@ -25,6 +28,8 @@ gem "puma", ">= 6.3.1"
 gem "rack-attack", "~> 6.7"
 
 gem "wicked_pdf", "~> 2.1"
+
+gem "aws-sdk-core", "3.214.1"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
@@ -49,6 +54,8 @@ group :development do
   gem "capistrano-rails-console"
   gem "capistrano-rbenv"
   gem "capistrano-sidekiq"
+
+  gem "faker"
 end
 
 group :production do
