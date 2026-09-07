@@ -8,7 +8,7 @@ DECIDIM_VERSION = "0.31.7"
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "release/0.31-stable"
+gem "decidim-decidim_awesome", git: "https://github.com/decidim-ice/decidim-module-decidim_awesome", branch: "main"
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-meetings", DECIDIM_VERSION
 gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "deps/decidim-0.31"
