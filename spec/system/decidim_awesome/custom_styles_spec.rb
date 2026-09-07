@@ -1,12 +1,21 @@
 # frozen_string_literal: true
 
 require "rails_helper"
+require "decidim/decidim_awesome/test/shared_examples/custom_styles_examples"
 
 describe "Custom styles" do
   let(:organization) { create(:organization) }
+  # CHANGE: Use a stronger password to pass Decidim's security validation
+  let(:password) { "D3c1d1m_1s_Aw3s0m3!" }
+  let(:user) { create(:user, :confirmed, organization:, password: password, password_confirmation: password) }
   let!(:participatory_process) { create(:participatory_process, organization:) }
   let!(:config) { create(:awesome_config, organization:, var: :scoped_styles, value: styles) }
   let(:config_helper) { create(:awesome_config, organization:, var: :scoped_style_bar) }
+  let(:default_background_color) { "rgba(0, 0, 0, 0)" }
+  # CHANGE: log in before the first `visit`. Warden's test `login_as` only applies to the
+  # next request reaching the Warden middleware, and once a page has been visited its
+  # in-flight Active Storage requests consume it, so the real navigation stays anonymous.
+  let(:logged_in) { false }
   let(:styles) do
     {
       "bar" => "body {background: red;}"
@@ -15,27 +24,8 @@ describe "Custom styles" do
 
   before do
     switch_to_host(organization.host)
+    login_as user, scope: :user if logged_in
     visit decidim.root_path
-  end
-
-  shared_examples "extra css is added" do
-    it "css is present" do
-      expect(page.body).to have_content("body {background: red;}")
-    end
-
-    it "css is applied" do
-      expect(page.execute_script("return window.getComputedStyle($('body')[0]).backgroundColor")).to eq("rgb(255, 0, 0)")
-    end
-  end
-
-  shared_examples "no extra css is added" do
-    it "css is no present" do
-      expect(page.body).to have_no_content("body {background: red;}")
-    end
-
-    it "css is not applyied" do
-      expect(page.execute_script("return window.getComputedStyle($('body')[0]).backgroundColor")).to eq("rgba(0, 0, 0, 0)")
-    end
   end
 
   context "when there are custom styles" do
@@ -56,7 +46,6 @@ describe "Custom styles" do
     let(:settings) do
       {}
     end
-
     let(:other_settings) do
       { "participatory_space_manifest" => "other" }
     end
@@ -69,7 +58,7 @@ describe "Custom styles" do
       it_behaves_like "extra css is added"
     end
 
-    context "and there are no custom styles" do
+    context "when there are no custom styles" do
       let(:styles) do
         {}
       end
@@ -77,7 +66,7 @@ describe "Custom styles" do
       it_behaves_like "no extra css is added"
     end
 
-    context "and custom styles are scoped" do
+    context "when custom styles are scoped" do
       let(:settings) do
         { "participatory_space_manifest" => "participatory_processes" }
       end
@@ -88,7 +77,7 @@ describe "Custom styles" do
 
       context "and page matches the scope" do
         before do
-          click_link_or_button "Processes"
+          click_on "Processes"
         end
 
         it_behaves_like "extra css is added"
@@ -99,6 +88,42 @@ describe "Custom styles" do
           end
 
           it_behaves_like "no extra css is added"
+        end
+      end
+    end
+
+    context "when application_contexts applies" do
+      let(:settings) do
+        { "application_context" => "anonymous" }
+      end
+
+      context "when user is not logged in" do
+        it_behaves_like "extra css is added"
+
+        context "when context is for logged in users" do
+          let(:settings) do
+            { "application_context" => "user_logged_in" }
+          end
+
+          it_behaves_like "no extra css is added"
+        end
+      end
+
+      context "when user is logged in" do
+        let(:logged_in) { true }
+
+        before do
+          click_on "Processes"
+        end
+
+        it_behaves_like "no extra css is added"
+
+        context "when context is for logged in users" do
+          let(:settings) do
+            { "application_context" => "user_logged_in" }
+          end
+
+          it_behaves_like "extra css is added"
         end
       end
     end
