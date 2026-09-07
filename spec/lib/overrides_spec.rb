@@ -24,7 +24,7 @@ checksums = [
     package: "decidim-admin",
     files: {
       # locales
-      "/config/locales/sr-CS.yml" => "98918b97fb63f8bd4ee84c8247a92100"
+      "/config/locales/sr-CS.yml" => "fd69e637bd91baf0460121f54a33b1bf"
     }
   },
   {

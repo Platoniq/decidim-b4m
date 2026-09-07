@@ -485,10 +485,6 @@ bs:
           images:
             preview: Pregled
           omnipresent_banner_appearance_title: Izmijeni sveprisutni baner
-      shared:
-        gallery:
-          add_images: Dodaj slike
-          gallery_legend: Dodaj galeriju slika (opciono)
       titles:
         metrics: Metrike
         statistics: Aktivnost

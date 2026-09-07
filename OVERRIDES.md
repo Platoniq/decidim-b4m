@@ -1,6 +1,6 @@
 # decidim-b4m — gem overrides
 
-_Generated 2026-08-20. Currently on Decidim **0.31.4**._
+_Generated 2026-09-07. Currently on Decidim **0.31.7**._
 
 This app patches files that live inside the decidim gems. `spec/lib/overrides_spec.rb` stores an MD5 of each upstream original, so the suite fails the moment upstream changes one — that is the signal that a local copy has drifted from the version it was forked from.
 
@@ -21,7 +21,7 @@ Translation files carried locally. Usually re-sync from upstream and keep the lo
 | package | file | recorded checksum |
 |---|---|---|
 | `decidim-accountability` | `/config/locales/sr-CS.yml` | `84747bbb…` |
-| `decidim-admin` | `/config/locales/sr-CS.yml` | `98918b97…` |
+| `decidim-admin` | `/config/locales/sr-CS.yml` | `fd69e637…` |
 | `decidim-assemblies` | `/config/locales/sr-CS.yml` | `db86c7d2…` |
 | `decidim-blogs` | `/config/locales/sr-CS.yml` | `4648c80b…` |
 | `decidim-budgets` | `/config/locales/sr-CS.yml` | `67da89fa…` |
@@ -44,13 +44,13 @@ Every guarded file has to be checked against 0.31. Three outcomes:
 
 - **Upstream unchanged** — only the checksum needs re-recording.
 - **Upstream renamed** — update the path in the spec as well (0.31 renames Answer→Response across forms/surveys).
-- **Upstream changed** — diff 0.30.x→0.31.4 and re-apply the local customisation.
+- **Upstream changed** — diff 0.30.x→0.31.7 and re-apply the local customisation.
 
 Compare with:
 
 ```console
 gh api repos/decidim/decidim/contents/<package><file>?ref=v0.30.9 -q .sha
-gh api repos/decidim/decidim/contents/<package><file>?ref=v0.31.4 -q .sha
+gh api repos/decidim/decidim/contents/<package><file>?ref=v0.31.7 -q .sha
 ```
 
 Same sha = category 1. 404 on the 0.31 side = category 2.
