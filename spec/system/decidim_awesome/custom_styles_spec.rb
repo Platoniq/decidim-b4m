@@ -12,6 +12,10 @@ describe "Custom styles" do
   let!(:config) { create(:awesome_config, organization:, var: :scoped_styles, value: styles) }
   let(:config_helper) { create(:awesome_config, organization:, var: :scoped_style_bar) }
   let(:default_background_color) { "rgba(0, 0, 0, 0)" }
+  # CHANGE: log in before the first `visit`. Warden's test `login_as` only applies to the
+  # next request reaching the Warden middleware, and once a page has been visited its
+  # in-flight Active Storage requests consume it, so the real navigation stays anonymous.
+  let(:logged_in) { false }
   let(:styles) do
     {
       "bar" => "body {background: red;}"
@@ -20,6 +24,7 @@ describe "Custom styles" do
 
   before do
     switch_to_host(organization.host)
+    login_as user, scope: :user if logged_in
     visit decidim.root_path
   end
 
@@ -105,8 +110,9 @@ describe "Custom styles" do
       end
 
       context "when user is logged in" do
+        let(:logged_in) { true }
+
         before do
-          login_as user, scope: :user
           click_on "Processes"
         end
 
